@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Manager - 4th Year Artificial Intelligence</title>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Auth Container -->
+        <div id="auth-screen" class="auth-container hidden">
+            <div class="auth-box">
+                <div class="auth-header">
+                    <div class="brand-logo">
+                        <i data-lucide="graduation-cap"></i>
+                    </div>
+                    <h2>Academic Workspace</h2>
+                    <p id="auth-subtitle">Sign in to manage your lectures & coursework</p>
+                </div>
+                
+                <form id="auth-form" onsubmit="event.preventDefault(); handleAuthSubmit();">
+                    <div class="form-group" id="name-group" style="display: none;">
+                        <label for="auth-name">Full Name</label>
+                        <input type="text" id="auth-name" placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="auth-email">Email Address</label>
+                        <input type="email" id="auth-email" required placeholder="student@university.edu">
+                    </div>
+                    <div class="form-group">
+                        <label for="auth-password">Password</label>
+                        <input type="password" id="auth-password" required placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="auth-submit-btn">Sign In</button>
+                </form>
+
+                <div class="auth-toggle">
+                    <span id="auth-toggle-text">Don't have an account?</span>
+                    <a href="#" id="auth-toggle-link" onclick="toggleAuthMode(); return false;">Sign Up</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Dashboard Container -->
+        <div id="main-layout" class="layout-container hidden">
+            <!-- Sidebar -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <div class="brand">
+                        <i data-lucide="graduation-cap" class="brand-icon"></i>
+                        <span class="brand-text">AI Workspace</span>
+                    </div>
+                    <button class="icon-btn mobile-only" onclick="toggleSidebar()">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+
+                <div class="user-badge" onclick="showSection('settings')">
+                    <div class="avatar" id="user-avatar-initials">AI</div>
+                    <div class="user-info">
+                        <span class="user-name" id="sidebar-user-name">Student</span>
+                        <span class="user-role">4th Year AI</span>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li class="nav-item active" data-section="dashboard" onclick="showSection('dashboard')">
+                            <i data-lucide="layout-dashboard"></i>
+                            <span>Dashboard</span>
+                        </li>
+                        <li class="nav-item" data-section="courses" onclick="showSection('courses')">
+                            <i data-lucide="book-open"></i>
+                            <span>Courses</span>
+                        </li>
+                        <li class="nav-item" data-section="files" onclick="showSection('files')">
+                            <i data-lucide="folder"></i>
+                            <span>Files</span>
+                        </li>
+                        <li class="nav-item" data-section="notes" onclick="showSection('notes')">
+                            <i data-lucide="file-text"></i>
+                            <span>Notes</span>
+                        </li>
+                        <li class="nav-item" data-section="quizzes" onclick="showSection('quizzes')">
+                            <i data-lucide="help-circle"></i>
+                            <span>Quizzes</span>
+                        </li>
+                        <li class="nav-item" data-section="assignments" onclick="showSection('assignments')">
+                            <i data-lucide="check-square"></i>
+                            <span>Assignments</span>
+                        </li>
+                        <li class="nav-item" data-section="calendar" onclick="showSection('calendar')">
+                            <i data-lucide="calendar"></i>
+                            <span>Calendar</span>
+                        </li>
+                        <li class="nav-item nav-special" data-section="project" onclick="showSection('project')">
+                            <i data-lucide="sparkles"></i>
+                            <span>Intelligent System Project</span>
+                        </li>
+                        <li class="nav-item" data-section="settings" onclick="showSection('settings')">
+                            <i data-lucide="settings"></i>
+                            <span>Settings</span>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <button class="btn btn-outline btn-block" onclick="logout()">
+                        <i data-lucide="log-out"></i>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <!-- Top Navbar -->
+                <header class="topbar">
+                    <div class="topbar-left">
+                        <button class="icon-btn sidebar-toggle" onclick="toggleSidebar()">
+                            <i data-lucide="menu"></i>
+                        </button>
+                        <h1 id="page-title">Dashboard</h1>
+                    </div>
+
+                    <div class="topbar-search">
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input type="text" id="global-search-input" placeholder="Search courses, lectures, files, notes..." oninput="handleGlobalSearch(this.value)">
+                        <div id="search-results-dropdown" class="search-dropdown hidden"></div>
+                    </div>
+
+                    <div class="topbar-right">
+                        <button class="icon-btn" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
+                            <i data-lucide="moon" id="theme-icon"></i>
+                        </button>
+                    </div>
+                </header>
+
+                <!-- Dynamic View Sections Container -->
+                <div class="content-body" id="content-body">
+                    <!-- Sections will be rendered here dynamically -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modals Container -->
+    <div id="modal-backdrop" class="modal-backdrop hidden" onclick="closeModalOnBackdrop(event)">
+        <div class="modal-card" id="modal-card">
+            <div class="modal-header">
+                <h3 id="modal-title">Modal Title</h3>
+                <button class="icon-btn" onclick="closeModal()"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Dynamic Modal Content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
