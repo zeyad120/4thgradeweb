@@ -717,6 +717,7 @@ function startQuiz(quizIndex) {
             <div id="question-container"></div>
             <div class="mobile-nav">
                 <button id="mobile-prev" onclick="mobilePrev()" disabled>&#8592; Prev</button>
+                <button style="flex:0.8;background:#667eea;color:white;border-color:#667eea;font-size:0.8rem;" onclick="openMobileQList()">&#9776; List</button>
                 <span class="mobile-nav-counter" id="mobile-nav-counter">1 / ${currentQuiz.questions.length}</span>
                 <button id="mobile-next" onclick="mobileNext()">Next &#8594;</button>
             </div>
@@ -848,6 +849,27 @@ function updateMobileNav() {
     if (prev)    prev.disabled = currentQuestionIndex === 0;
     if (next)    next.disabled = currentQuestionIndex === currentQuiz.questions.length - 1;
     if (counter) counter.textContent = (currentQuestionIndex + 1) + ' / ' + currentQuiz.questions.length;
+}
+
+
+// Open mobile question-list overlay
+function openMobileQList() {
+    const overlay = document.getElementById('mobile-qlist-overlay');
+    const grid    = document.getElementById('mobile-qlist-grid');
+    if (!overlay || !grid) return;
+    grid.innerHTML = currentQuiz.questions.map((_, idx) => {
+        let cls = 'question-nav-item';
+        if (idx === currentQuestionIndex) cls += ' active';
+        else if (userAnswers[idx] !== undefined) cls += userAnswers[idx].correct ? ' correct' : ' incorrect';
+        return `<div class="${cls}" onclick="closeMobileQList();goToQuestion(${idx})">${idx + 1}</div>`;
+    }).join('');
+    overlay.classList.add('open');
+}
+
+// Close mobile question-list overlay
+function closeMobileQList(event) {
+    const overlay = document.getElementById('mobile-qlist-overlay');
+    if (overlay) overlay.classList.remove('open');
 }
 
 // Select Answer
