@@ -600,7 +600,7 @@ let isDarkMode = false;
 
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
-    lucide.createIcons();
+    try { lucide.createIcons(); } catch(e) { console.warn('Lucide icons not loaded:', e); }
     loadCourses();
     loadTheme();
 });
@@ -628,7 +628,7 @@ function updateThemeIcon() {
     const icon = document.getElementById('theme-icon');
     if (icon) {
         icon.setAttribute('data-lucide', isDarkMode ? 'sun' : 'moon');
-        lucide.createIcons();
+        try { lucide.createIcons(); } catch(e) {}
     }
 }
 
@@ -651,7 +651,7 @@ function loadCourses() {
         </div>
     `;
     }).join('');
-    lucide.createIcons();
+    try { lucide.createIcons(); } catch(e) {}
 }
 
 // Show Course Quizzes
@@ -685,7 +685,7 @@ function showCourseQuizzes(courseId) {
     `;
     
     modal.classList.add('active');
-    lucide.createIcons();
+    try { lucide.createIcons(); } catch(e) {}
 }
 
 // Start Quiz
@@ -722,7 +722,7 @@ function startQuiz(quizIndex) {
     console.log('Modal activated, now rendering nav and question...');
     renderQuestionNav();
     renderCurrentQuestion();
-    lucide.createIcons();
+    try { lucide.createIcons(); } catch(e) {}
 }
 
 // Render Question Navigation
