@@ -9,7 +9,7 @@ const COURSES = [
         quizzes: [
             {
                 id: 'av-quiz1',
-                title: 'Questions on Lecture 1,2 (PART 1 — Pattern Recognition & AI)',
+                title: 'Questions on Lecture 1,2 (PART 1  -  Pattern Recognition & AI)',
                 questions: [
                     {
                         question: 'What is Pattern Recognition?',
@@ -31,7 +31,7 @@ const COURSES = [
                     },
                     {
                         question: 'Which sequence best represents the general Pattern Recognition process?',
-                        options: ['Decision → Data → Pattern', 'Data → Pattern → Decision', 'Pattern → Data → Decision', 'Decision → Pattern → Data'],
+                        options: ['Decision -> Data -> Pattern', 'Data -> Pattern -> Decision', 'Pattern -> Data -> Decision', 'Decision -> Pattern -> Data'],
                         correct: 1,
                         explanation: 'The system receives data, discovers patterns, and then makes a decision.'
                     },
@@ -43,9 +43,9 @@ const COURSES = [
                     },
                     {
                         question: 'What is the correct order of a Pattern Recognition system?',
-                        options: ['Classification → Sensor → Preprocessing → Feature Extraction', 'Sensor → Preprocessing → Feature Extraction → Classification', 'Feature Extraction → Sensor → Classification → Preprocessing', 'Sensor → Classification → Preprocessing → Feature Extraction'],
+                        options: ['Classification -> Sensor -> Preprocessing -> Feature Extraction', 'Sensor -> Preprocessing -> Feature Extraction -> Classification', 'Feature Extraction -> Sensor -> Classification -> Preprocessing', 'Sensor -> Classification -> Preprocessing -> Feature Extraction'],
                         correct: 1,
-                        explanation: 'The four stages are: Sensor → Preprocessing → Feature Extraction → Classification.'
+                        explanation: 'The four stages are: Sensor -> Preprocessing -> Feature Extraction -> Classification.'
                     },
                     {
                         question: 'What is the purpose of the Sensor stage?',
@@ -105,7 +105,7 @@ const COURSES = [
                         question: 'What does Bayes\' theorem calculate P(class|data)?',
                         options: ['The probability of a class given observed data', 'The number of features', 'The training accuracy', 'The number of classes'],
                         correct: 0,
-                        explanation: 'P(class|data) is the posterior probability — the probability of the class after observing the data.'
+                        explanation: 'P(class|data) is the posterior probability  -  the probability of the class after observing the data.'
                     },
                     {
                         question: 'In a spam filter, if P(spam)=0.30, what does this mean?',
@@ -201,7 +201,7 @@ const COURSES = [
                         question: 'What distance measure was used in the k-NN example?',
                         options: ['Manhattan distance', 'Euclidean distance', 'Hamming distance', 'Cosine similarity'],
                         correct: 1,
-                        explanation: 'd = sqrt((Δ length)^2 + (Δ lightness)^2). This is the Euclidean distance.'
+                        explanation: 'd = sqrt((delta length)^2 + (delta lightness)^2). This is the Euclidean distance.'
                     },
                     {
                         question: 'Why was feature scaling used before calculating the distances?',
@@ -234,10 +234,10 @@ const COURSES = [
                         explanation: 'The example shows that changing k can change the classification result.'
                     },
                     {
-                        question: 'An 8×8 grayscale digit image contains how many pixels?',
+                        question: 'An 8x8 grayscale digit image contains how many pixels?',
                         options: ['8', '16', '64', '128'],
                         correct: 2,
-                        explanation: '8×8=64. Therefore, the image can be represented by 64 numerical values.'
+                        explanation: '8x8=64. Therefore, the image can be represented by 64 numerical values.'
                     },
                     {
                         question: 'In the digit example, how many classes are there?',
@@ -321,7 +321,7 @@ const COURSES = [
                         question: 'What is the main role of WOA in this research?',
                         options: ['Predict sepsis directly', 'Select important clinical features', 'Explain the model', 'Generate patient data'],
                         correct: 1,
-                        explanation: 'WOA is used for Feature Selection — finding a smaller and useful subset of the original features.'
+                        explanation: 'WOA is used for Feature Selection  -  finding a smaller and useful subset of the original features.'
                     },
                     {
                         question: 'How many original features were available?',
@@ -345,7 +345,7 @@ const COURSES = [
                         question: 'What percentage reduction in the number of features was achieved?',
                         options: ['25%', '40%', '48%', '52%'],
                         correct: 2,
-                        explanation: '(25-13)/25×100=48%. So the number of features was reduced by approximately 48%.'
+                        explanation: '(25-13)/25x100=48%. So the number of features was reduced by approximately 48%.'
                     },
                     {
                         question: 'Which of the following is a clinical feature mentioned in the research?',
@@ -441,7 +441,7 @@ const COURSES = [
                         question: 'If the model is applied to 1,000 cases with 97.6% accuracy, approximately how many predictions are correct?',
                         options: ['24', '760', '976', '997'],
                         correct: 2,
-                        explanation: '0.976×1000=976. So about 976 predictions are correct.'
+                        explanation: '0.976x1000=976. So about 976 predictions are correct.'
                     },
                     {
                         question: 'What was the reported Sensitivity?',
@@ -469,15 +469,15 @@ const COURSES = [
                     },
                     {
                         question: 'What is the formula for F1-score?',
-                        options: ['F1 = Precision + Recall', 'F1 = Precision × Recall', 'F1 = 2(Precision × Recall) / (Precision + Recall)', 'F1 = Accuracy - Precision'],
+                        options: ['F1 = Precision + Recall', 'F1 = Precision x Recall', 'F1 = 2(Precision x Recall) / (Precision + Recall)', 'F1 = Accuracy - Precision'],
                         correct: 2,
-                        explanation: 'F1 is the harmonic mean of Precision and Recall: 2(Precision × Recall) / (Precision + Recall)'
+                        explanation: 'F1 is the harmonic mean of Precision and Recall: 2(Precision x Recall) / (Precision + Recall)'
                     },
                     {
                         question: 'If Precision = 0.975 and Recall = 0.977, approximately what is the F1-score?',
                         options: ['0.50', '0.876', '0.976', '1.50'],
                         correct: 2,
-                        explanation: 'F1 = 2(0.975×0.977)/(0.975+0.977) ≈ 0.976'
+                        explanation: 'F1 = 2(0.975x0.977)/(0.975+0.977) ~= 0.976'
                     },
                     {
                         question: 'Why is Accuracy alone not always sufficient in a medical problem?',
@@ -487,9 +487,9 @@ const COURSES = [
                     },
                     {
                         question: 'Which statement best describes the complete proposed system?',
-                        options: ['25 features → CNN → SHAP', 'Clinical data → WOA feature selection → Stacking Ensemble → Sepsis prediction → SHAP explanation', 'Images → k-NN → Random Forest', 'Clinical data → Naive Bayes only'],
+                        options: ['25 features -> CNN -> SHAP', 'Clinical data -> WOA feature selection -> Stacking Ensemble -> Sepsis prediction -> SHAP explanation', 'Images -> k-NN -> Random Forest', 'Clinical data -> Naive Bayes only'],
                         correct: 1,
-                        explanation: 'The complete system: Clinical data → WOA selects 13 features → DT+KNN+AdaBoost → Stacking Ensemble → Sepsis prediction → SHAP explains the prediction'
+                        explanation: 'The complete system: Clinical data -> WOA selects 13 features -> DT+KNN+AdaBoost -> Stacking Ensemble -> Sepsis prediction -> SHAP explains the prediction'
                     },
                     {
                         question: 'Why is WOA useful before applying the ensemble models?',
@@ -705,10 +705,10 @@ function startQuiz(quizIndex) {
         <div class="quiz-sidebar">
             <h3>Questions</h3>
             <div class="question-nav" id="question-nav"></div>
-            <button class="btn-return" onclick="returnToCourseList()" style="margin-top: 20px; width: 100%;">← Return to Courses</button>
+            <button class="btn-return" onclick="returnToCourseList()" style="margin-top: 20px; width: 100%;"><- Return to Courses</button>
         </div>
         <div class="quiz-main">
-            <button class="close-modal" onclick="closeQuizModal()" style="position: absolute; top: 15px; right: 15px; z-index: 10;">×</button>
+            <button class="close-modal" onclick="closeQuizModal()" style="position: absolute; top: 15px; right: 15px; z-index: 10;">x</button>
             <div class="quiz-header">
                 <h2>${currentQuiz.title}</h2>
                 <span class="quiz-progress" id="quiz-progress">Question 1 of ${currentQuiz.questions.length}</span>
