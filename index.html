@@ -1,167 +1,677 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Manager - 4th Year Artificial Intelligence</title>
-    <!-- Lucide Icons -->
+    <title>Quiz Platform - 4th Year Artificial Intelligence</title>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-mode {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+        }
+
+        /* Landing Page */
+        .landing-container {
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .landing-header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 30px;
+            border-radius: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        body.dark-mode .landing-header {
+            background: rgba(30, 30, 50, 0.95);
+        }
+
+        .landing-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .landing-logo i {
+            width: 50px;
+            height: 50px;
+            color: #667eea;
+        }
+
+        .landing-logo h1 {
+            font-size: 1.8rem;
+            color: #667eea;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .landing-logo h1 {
+            color: #a78bfa;
+        }
+
+        .landing-logo span {
+            color: #764ba2;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .landing-logo span {
+            color: #c4b5fd;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #667eea;
+            color: #667eea;
+        }
+
+        .btn-outline:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .welcome-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        body.dark-mode .welcome-section {
+            background: rgba(30, 30, 50, 0.9);
+        }
+
+        .welcome-section h2 {
+            color: #333;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .welcome-section h2 {
+            color: #e0e0e0;
+        }
+
+        .welcome-section p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .welcome-section p {
+            color: #b0b0b0;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .course-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .course-card {
+            background: rgba(30, 30, 50, 0.95);
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .course-icon i {
+            width: 30px;
+            height: 30px;
+            color: white;
+        }
+
+        .course-card h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .course-card h3 {
+            color: #e0e0e0;
+        }
+
+        .course-card p {
+            color: #666;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .course-card p {
+            color: #b0b0b0;
+        }
+
+        .quiz-count {
+            background: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #667eea;
+            font-weight: 600;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark-mode .quiz-count {
+            background: #2a2a4a;
+            color: #a78bfa;
+        }
+
+        /* Quiz Modal */
+        .quiz-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .quiz-modal.active {
+            display: flex;
+        }
+
+        .quiz-content {
+            background: white;
+            padding: 0;
+            border-radius: 0;
+            max-width: 100%;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            transition: background 0.3s ease;
+            display: flex;
+        }
+
+        body.dark-mode .quiz-content {
+            background: #1e1e32;
+        }
+
+        .quiz-sidebar {
+            width: 250px;
+            background: #f8f8f8;
+            padding: 20px;
+            border-right: 1px solid #eee;
+            overflow-y: auto;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        body.dark-mode .quiz-sidebar {
+            background: #2a2a4a;
+            border-color: #3a3a5a;
+        }
+
+        .quiz-sidebar h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .quiz-sidebar h3 {
+            color: #e0e0e0;
+        }
+
+        .question-nav {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+        }
+
+        .question-nav-item {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        body.dark-mode .question-nav-item {
+            border-color: #4a4a6a;
+            color: #e0e0e0;
+        }
+
+        .question-nav-item:hover {
+            border-color: #667eea;
+            background: #f0f0f0;
+        }
+
+        body.dark-mode .question-nav-item:hover {
+            border-color: #a78bfa;
+            background: #3a3a5a;
+        }
+
+        .question-nav-item.active {
+            background: #667eea;
+            border-color: #667eea;
+            color: white;
+        }
+
+        .question-nav-item.correct {
+            background: #10b981;
+            border-color: #10b981;
+            color: white;
+        }
+
+        .question-nav-item.incorrect {
+            background: #ef4444;
+            border-color: #ef4444;
+            color: white;
+        }
+
+        .quiz-main {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            transition: border-color 0.3s ease;
+        }
+
+        body.dark-mode .quiz-header {
+            border-color: #3a3a5a;
+        }
+
+        .quiz-header h2 {
+            color: #333;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .quiz-header h2 {
+            color: #e0e0e0;
+        }
+
+        .quiz-progress {
+            color: #666;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .quiz-progress {
+            color: #b0b0b0;
+        }
+
+        #question-container {
+            min-height: 200px;
+        }
+
+        #quiz-container {
+            display: flex;
+            flex: 1;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s ease;
+            z-index: 10;
+        }
+
+        body.dark-mode .close-modal {
+            color: #b0b0b0;
+        }
+
+        .quiz-question {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f8f8;
+            border-radius: 12px;
+            transition: background 0.3s ease;
+        }
+
+        body.dark-mode .quiz-question {
+            background: #2a2a4a;
+        }
+
+        .quiz-question h4 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .quiz-question h4 {
+            color: #e0e0e0;
+        }
+
+        .quiz-option {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        body.dark-mode .quiz-option {
+            background: #1e1e32;
+            border-color: #4a4a6a;
+        }
+
+        .quiz-option:hover:not(.disabled) {
+            border-color: #667eea;
+            background: #f0f0f0;
+        }
+
+        body.dark-mode .quiz-option:hover:not(.disabled) {
+            border-color: #a78bfa;
+            background: #3a3a5a;
+        }
+
+        .quiz-option.correct {
+            border-color: #10b981;
+            background: #d1fae5;
+        }
+
+        body.dark-mode .quiz-option.correct {
+            background: #064e3b;
+        }
+
+        .quiz-option.incorrect {
+            border-color: #ef4444;
+            background: #fee2e2;
+        }
+
+        body.dark-mode .quiz-option.incorrect {
+            background: #7f1d1d;
+        }
+
+        .quiz-option.disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .quiz-option input {
+            margin-right: 12px;
+            pointer-events: none;
+        }
+
+        .quiz-option span {
+            color: #333;
+            flex: 1;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .quiz-option span {
+            color: #e0e0e0;
+        }
+
+        .quiz-option.correct span,
+        .quiz-option.incorrect span {
+            color: #333;
+        }
+
+        body.dark-mode .quiz-option.correct span,
+        body.dark-mode .quiz-option.incorrect span {
+            color: #e0e0e0;
+        }
+
+        .explanation {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e0f2fe;
+            border-left: 4px solid #0ea5e9;
+            border-radius: 8px;
+            display: none;
+        }
+
+        body.dark-mode .explanation {
+            background: #0c4a6e;
+        }
+
+        .explanation.show {
+            display: block;
+        }
+
+        .explanation h5 {
+            color: #0ea5e9;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .explanation p {
+            color: #666;
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        body.dark-mode .explanation p {
+            color: #b0b0b0;
+        }
+
+        .quiz-results {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .quiz-results h2 {
+            color: #333;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .quiz-results h2 {
+            color: #e0e0e0;
+        }
+
+        .quiz-results h3 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .score-high {
+            color: #10b981;
+        }
+
+        .score-medium {
+            color: #f59e0b;
+        }
+
+        .score-low {
+            color: #ef4444;
+        }
+
+        .quiz-results p {
+            color: #666;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        body.dark-mode .quiz-results p {
+            color: #b0b0b0;
+        }
+
+        .btn-return {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn-return:hover {
+            background: #5568d3;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .quiz-content {
+                flex-direction: column;
+            }
+
+            .quiz-sidebar {
+                width: 100%;
+                max-height: 150px;
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+
+            body.dark-mode .quiz-sidebar {
+                border-bottom-color: #3a3a5a;
+            }
+
+            .quiz-main {
+                padding: 20px;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .landing-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div id="app">
-        <!-- Auth Container -->
-        <div id="auth-screen" class="auth-container hidden">
-            <div class="auth-box">
-                <div class="auth-header">
-                    <div class="brand-logo">
-                        <i data-lucide="graduation-cap"></i>
-                    </div>
-                    <h2>Academic Workspace</h2>
-                    <p id="auth-subtitle">Sign in to manage your lectures & coursework</p>
-                </div>
-                
-                <form id="auth-form" onsubmit="event.preventDefault(); handleAuthSubmit();">
-                    <div class="form-group" id="name-group" style="display: none;">
-                        <label for="auth-name">Full Name</label>
-                        <input type="text" id="auth-name" placeholder="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="auth-email">Email Address</label>
-                        <input type="email" id="auth-email" required placeholder="student@university.edu">
-                    </div>
-                    <div class="form-group">
-                        <label for="auth-password">Password</label>
-                        <input type="password" id="auth-password" required placeholder="••••••••">
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block" id="auth-submit-btn">Sign In</button>
-                </form>
-
-                <div class="auth-toggle">
-                    <span id="auth-toggle-text">Don't have an account?</span>
-                    <a href="#" id="auth-toggle-link" onclick="toggleAuthMode(); return false;">Sign Up</a>
+    <!-- Landing Page -->
+    <div id="landing-page" class="landing-container">
+        <div class="landing-header">
+            <div class="landing-logo">
+                <i data-lucide="graduation-cap"></i>
+                <div>
+                    <h1>Quiz <span>Platform</span></h1>
+                    <small>4th Year - Artificial Intelligence</small>
                 </div>
             </div>
+            <button class="btn btn-outline" onclick="toggleTheme()" id="theme-toggle">
+                <i data-lucide="moon" id="theme-icon"></i>
+            </button>
         </div>
 
-        <!-- Main Dashboard Container -->
-        <div id="main-layout" class="layout-container hidden">
-            <!-- Sidebar -->
-            <aside class="sidebar" id="sidebar">
-                <div class="sidebar-header">
-                    <div class="brand">
-                        <i data-lucide="graduation-cap" class="brand-icon"></i>
-                        <span class="brand-text">AI Workspace</span>
-                    </div>
-                    <button class="icon-btn mobile-only" onclick="toggleSidebar()">
-                        <i data-lucide="x"></i>
-                    </button>
-                </div>
+        <div class="welcome-section">
+            <h2>Welcome to the Quiz Platform</h2>
+            <p>Test your knowledge in all 4th year courses - Artificial Intelligence Department</p>
+        </div>
 
-                <div class="user-badge" onclick="showSection('settings')">
-                    <div class="avatar" id="user-avatar-initials">AI</div>
-                    <div class="user-info">
-                        <span class="user-name" id="sidebar-user-name">Student</span>
-                        <span class="user-role">4th Year AI</span>
-                    </div>
-                </div>
-
-                <nav class="sidebar-nav">
-                    <ul>
-                        <li class="nav-item active" data-section="dashboard" onclick="showSection('dashboard')">
-                            <i data-lucide="layout-dashboard"></i>
-                            <span>Dashboard</span>
-                        </li>
-                        <li class="nav-item" data-section="courses" onclick="showSection('courses')">
-                            <i data-lucide="book-open"></i>
-                            <span>Courses</span>
-                        </li>
-                        <li class="nav-item" data-section="files" onclick="showSection('files')">
-                            <i data-lucide="folder"></i>
-                            <span>Files</span>
-                        </li>
-                        <li class="nav-item" data-section="notes" onclick="showSection('notes')">
-                            <i data-lucide="file-text"></i>
-                            <span>Notes</span>
-                        </li>
-                        <li class="nav-item" data-section="quizzes" onclick="showSection('quizzes')">
-                            <i data-lucide="help-circle"></i>
-                            <span>Quizzes</span>
-                        </li>
-                        <li class="nav-item" data-section="assignments" onclick="showSection('assignments')">
-                            <i data-lucide="check-square"></i>
-                            <span>Assignments</span>
-                        </li>
-                        <li class="nav-item" data-section="calendar" onclick="showSection('calendar')">
-                            <i data-lucide="calendar"></i>
-                            <span>Calendar</span>
-                        </li>
-                        <li class="nav-item nav-special" data-section="project" onclick="showSection('project')">
-                            <i data-lucide="sparkles"></i>
-                            <span>Intelligent System Project</span>
-                        </li>
-                        <li class="nav-item" data-section="settings" onclick="showSection('settings')">
-                            <i data-lucide="settings"></i>
-                            <span>Settings</span>
-                        </li>
-                    </ul>
-                </nav>
-
-                <div class="sidebar-footer">
-                    <button class="btn btn-outline btn-block" onclick="logout()">
-                        <i data-lucide="log-out"></i>
-                        <span>Logout</span>
-                    </button>
-                </div>
-            </aside>
-
-            <!-- Main Content Area -->
-            <main class="main-content">
-                <!-- Top Navbar -->
-                <header class="topbar">
-                    <div class="topbar-left">
-                        <button class="icon-btn sidebar-toggle" onclick="toggleSidebar()">
-                            <i data-lucide="menu"></i>
-                        </button>
-                        <h1 id="page-title">Dashboard</h1>
-                    </div>
-
-                    <div class="topbar-search">
-                        <i data-lucide="search" class="search-icon"></i>
-                        <input type="text" id="global-search-input" placeholder="Search courses, lectures, files, notes..." oninput="handleGlobalSearch(this.value)">
-                        <div id="search-results-dropdown" class="search-dropdown hidden"></div>
-                    </div>
-
-                    <div class="topbar-right">
-                        <button class="icon-btn" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
-                            <i data-lucide="moon" id="theme-icon"></i>
-                        </button>
-                    </div>
-                </header>
-
-                <!-- Dynamic View Sections Container -->
-                <div class="content-body" id="content-body">
-                    <!-- Sections will be rendered here dynamically -->
-                </div>
-            </main>
+        <div class="courses-grid" id="courses-grid">
+            <!-- Courses will be loaded here -->
         </div>
     </div>
 
-    <!-- Modals Container -->
-    <div id="modal-backdrop" class="modal-backdrop hidden" onclick="closeModalOnBackdrop(event)">
-        <div class="modal-card" id="modal-card">
-            <div class="modal-header">
-                <h3 id="modal-title">Modal Title</h3>
-                <button class="icon-btn" onclick="closeModal()"><i data-lucide="x"></i></button>
-            </div>
-            <div class="modal-body" id="modal-body">
-                <!-- Dynamic Modal Content -->
+    <!-- Quiz Modal -->
+    <div id="quiz-modal" class="quiz-modal">
+        <div class="quiz-content">
+            <div id="quiz-container">
+                <!-- Quiz questions will be loaded here -->
             </div>
         </div>
     </div>
-
-    <!-- Toast Notifications Container -->
-    <div id="toast-container" class="toast-container"></div>
 
     <script src="js/app.js"></script>
 </body>
