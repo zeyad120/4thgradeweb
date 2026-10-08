@@ -705,15 +705,21 @@ function startQuiz(quizIndex) {
         <div class="quiz-sidebar">
             <h3>Questions</h3>
             <div class="question-nav" id="question-nav"></div>
-            <button class="btn-return" onclick="returnToCourseList()" style="margin-top: 20px; width: 100%;"><- Return to Courses</button>
+            <button class="btn-return" onclick="returnToCourseList()" style="margin-top: 20px; width: 100%;">&#8592; Return to Courses</button>
         </div>
         <div class="quiz-main">
-            <button class="close-modal" onclick="closeQuizModal()" style="position: absolute; top: 15px; right: 15px; z-index: 10;">x</button>
+            <button class="close-modal" onclick="closeQuizModal()">&#xd7;</button>
             <div class="quiz-header">
                 <h2>${currentQuiz.title}</h2>
                 <span class="quiz-progress" id="quiz-progress">Question 1 of ${currentQuiz.questions.length}</span>
             </div>
+            <div class="mobile-progress-bar" id="mobile-progress-bar"></div>
             <div id="question-container"></div>
+            <div class="mobile-nav">
+                <button id="mobile-prev" onclick="mobilePrev()" disabled>&#8592; Prev</button>
+                <span class="mobile-nav-counter" id="mobile-nav-counter">1 / ${currentQuiz.questions.length}</span>
+                <button id="mobile-next" onclick="mobileNext()">Next &#8594;</button>
+            </div>
         </div>
     `;
     
@@ -800,6 +806,48 @@ function renderCurrentQuestion() {
         progressEl.textContent = `Question ${currentQuestionIndex + 1} of ${currentQuiz.questions.length}`;
     }
     console.log('=== renderCurrentQuestion END ===');
+    renderMobileDots();
+    updateMobileNav();
+}
+
+
+// Mobile: Prev question
+function mobilePrev() {
+    if (currentQuestionIndex > 0) {
+        goToQuestion(currentQuestionIndex - 1);
+    }
+}
+
+// Mobile: Next question
+function mobileNext() {
+    if (currentQuestionIndex < currentQuiz.questions.length - 1) {
+        goToQuestion(currentQuestionIndex + 1);
+    }
+}
+
+// Render mobile dot progress bar
+function renderMobileDots() {
+    const bar = document.getElementById('mobile-progress-bar');
+    if (!bar) return;
+    bar.innerHTML = currentQuiz.questions.map((_, idx) => {
+        let cls = 'mobile-dot';
+        if (idx === currentQuestionIndex) cls += ' active';
+        else if (userAnswers[idx] !== undefined) cls += userAnswers[idx].correct ? ' correct' : ' incorrect';
+        return `<div class="${cls}" onclick="goToQuestion(${idx})"></div>`;
+    }).join('');
+    // Scroll active dot into view
+    const activeDot = bar.querySelector('.mobile-dot.active');
+    if (activeDot) activeDot.scrollIntoView({ block: 'nearest', inline: 'center' });
+}
+
+// Update mobile prev/next button states
+function updateMobileNav() {
+    const prev = document.getElementById('mobile-prev');
+    const next = document.getElementById('mobile-next');
+    const counter = document.getElementById('mobile-nav-counter');
+    if (prev)    prev.disabled = currentQuestionIndex === 0;
+    if (next)    next.disabled = currentQuestionIndex === currentQuiz.questions.length - 1;
+    if (counter) counter.textContent = (currentQuestionIndex + 1) + ' / ' + currentQuiz.questions.length;
 }
 
 // Select Answer
