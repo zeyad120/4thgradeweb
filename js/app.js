@@ -587,7 +587,134 @@ const COURSES = [
         code: 'SD406',
         icon: 'layout',
         description: 'Design and building software systems',
-        quizzes: []
+        quizzes: [
+            {
+                id: 'sd-quiz1',
+                title: 'MCQs on lecture -1',
+                questions: [
+                    {
+                        question: 'What is the primary focus of AI system design?',
+                        options: ['Writing code for a single AI model', 'Planning how components like data, models, users, and infrastructure work together', 'Replacing traditional software entirely', 'Training machine learning models only'],
+                        correct: 1,
+                        explanation: 'System design is about planning how different components of a system work together. In AI products, it includes code, data, models, users, feedback, APIs, infrastructure, security, monitoring, and UX.'
+                    },
+                    {
+                        question: 'How does traditional software primarily differ from AI system design?',
+                        options: ['Traditional software is always faster', 'Traditional software follows fixed rules, while AI systems learn, predict, or generate', 'AI systems do not use databases', 'Traditional software cannot scale'],
+                        correct: 1,
+                        explanation: 'Traditional software is deterministic and rule-based (e.g., if password correct → allow login). AI system design asks what the system should learn, predict, generate, or recommend, introducing uncertainty and data dependency.'
+                    },
+                    {
+                        question: 'Which of the following is NOT a typical component of an AI system?',
+                        options: ['AI models', 'Monitoring', 'Feedback', 'Only a standalone model with no infrastructure'],
+                        correct: 3,
+                        explanation: 'An AI system includes users, applications, data, AI models, APIs, infrastructure, monitoring, and feedback. The AI model is only one part of the full system.'
+                    },
+                    {
+                        question: 'What does an AI product need to do beyond just having a good model?',
+                        options: ['Solve a real user problem, work reliably, handle errors, protect data, scale, and improve', 'Only generate accurate predictions', 'Avoid using any user feedback', 'Operate without any monitoring'],
+                        correct: 0,
+                        explanation: 'A good model alone does not guarantee a good product. An AI product must solve a real user problem, work reliably, handle errors, protect data, scale to many users, give useful output, and improve over time.'
+                    },
+                    {
+                        question: 'In the AI university assistant example, what is the correct order of system flow?',
+                        options: ['Generate Answer → Search Documents → Student Question → Show Answer', 'Student Question → AI Assistant → Search University Documents → Generate Answer → Show Answer with Source', 'Search Documents → Student Question → Show Answer → AI Assistant', 'AI Assistant → Student Question → Generate Answer → Search Documents'],
+                        correct: 1,
+                        explanation: 'The flow is: Student asks a question → AI Assistant processes inquiry → Search University Documents → Generate Answer → Show Answer with Source. This requires UI, data, search, AI model, permissions, and monitoring.'
+                    },
+                    {
+                        question: 'Which layer of an AI system is responsible for what the user sees and interacts with?',
+                        options: ['Application Layer', 'Data Layer', 'User Experience Layer', 'AI/ML Layer'],
+                        correct: 2,
+                        explanation: 'The User Experience Layer is what the user sees and interacts with, such as web apps, mobile apps, chat interfaces, dashboards, voice assistants, or API interfaces.'
+                    },
+                    {
+                        question: 'What is the role of the Application Layer in an AI system?',
+                        options: ['It contains the intelligence of the system', 'It controls business logic, authentication, authorization, and workflow management', 'It stores all training data', 'It monitors model accuracy'],
+                        correct: 1,
+                        explanation: 'The Application Layer controls business logic. It includes authentication, authorization, user profiles, business rules, API endpoints, workflow management, and error handling.'
+                    },
+                    {
+                        question: 'Which of the following is NOT part of the Data Layer in an AI system?',
+                        options: ['Relational databases', 'Vector databases', 'Feature stores', 'User interface design'],
+                        correct: 3,
+                        explanation: 'The Data Layer includes relational databases, data warehouses, data lakes, feature stores, vector databases, document storage, logs, and events. User interface design belongs to the UX Layer.'
+                    },
+                    {
+                        question: 'What does the AI/ML Layer contain?',
+                        options: ['Only large language models', 'Classification, prediction, recommendation, NLP, computer vision, LLMs, embeddings, and RAG pipelines', 'Only databases and storage', 'Only monitoring tools'],
+                        correct: 1,
+                        explanation: 'The AI/ML Layer contains the intelligence of the system, including classification models, prediction models, recommendation models, NLP models, computer vision models, large language models, embedding models, and RAG pipelines.'
+                    },
+                    {
+                        question: 'Why is continuous monitoring important in AI systems?',
+                        options: ['To increase model size', 'To detect silent degradation in latency, accuracy, hallucination rate, cost, and bias', 'To replace the need for data', 'To eliminate the need for user feedback'],
+                        correct: 1,
+                        explanation: 'Without monitoring, AI systems may silently degrade. Important metrics include latency, error rate, model accuracy, hallucination rate, cost per request, user satisfaction, data operation, and bias or fairness issues.'
+                    },
+                    {
+                        question: 'What is an intelligent digital product?',
+                        options: ['A product that uses AI to improve the user experience', 'A product that only stores data', 'A product that uses fixed rules only', 'A product that does not learn from feedback'],
+                        correct: 0,
+                        explanation: 'An intelligent digital product uses AI to improve the user experience. It may understand the user, predict needs, personalize content, recommend actions, generate responses, automate tasks, and learn from feedback.'
+                    },
+                    {
+                        question: 'What is a cognitive experience?',
+                        options: ['A user experience where the system appears to think, understand, or assist intelligently', 'A system that only follows fixed rules', 'A database management system', 'A hardware component'],
+                        correct: 0,
+                        explanation: 'A cognitive experience is a user experience where the system appears to think, understand, or assist intelligently, such as understanding questions, recommending needs, explaining complex information, adapting to behavior, and helping make decisions.'
+                    },
+                    {
+                        question: 'Which of the following is a common AI product pattern?',
+                        options: ['Prediction, classification, recommendation, ranking, search, summarization, generation', 'Only database indexing', 'Only file storage', 'Only network routing'],
+                        correct: 0,
+                        explanation: 'Common AI product patterns include prediction, classification, recommendation, ranking, search, summarization, generation, personalization, intelligent automation, and decision support. Each requires a different architecture.'
+                    },
+                    {
+                        question: 'In a recommendation system, what is the basic architecture order?',
+                        options: ['Generate Ranked Suggestions → Process Recommendation Model → Gather Input Data', 'Gather Input Data → Process Recommendation Model → Generate Ranked Suggestions', 'Process Recommendation Model → Gather Input Data → Generate Ranked Suggestions', 'Gather Input Data → Generate Ranked Suggestions → Process Recommendation Model'],
+                        correct: 1,
+                        explanation: 'The basic architecture is: Gather Input Data (user data, item data, interaction data) → Process Recommendation Model → Generate Ranked Suggestions.'
+                    },
+                    {
+                        question: 'Why does big data matter for AI systems?',
+                        options: ['It provides large training datasets, user behavior analysis, real-time events, personalization signals, and performance monitoring', 'It replaces the need for AI models', 'It eliminates privacy concerns', 'It makes systems deterministic'],
+                        correct: 0,
+                        explanation: 'Big data supports AI by providing large training datasets, user behavior analysis, real-time events, personalization signals, performance monitoring, and business insights. AI products become stronger when they learn from large, diverse, high-quality data.'
+                    },
+                    {
+                        question: 'Which of the following is a major challenge in AI system design?',
+                        options: ['Data quality, model accuracy, scalability, latency, cost, privacy, security, bias, explainability, hallucination, user trust, and continuous monitoring', 'Only model accuracy', 'Only cost', 'Only data storage'],
+                        correct: 0,
+                        explanation: 'Major challenges include data quality, model accuracy, scalability, latency, cost, privacy, security, bias, explainability, hallucination, user trust, and continuous monitoring. AI system design is complex because technical and human factors interact.'
+                    },
+                    {
+                        question: 'What is the main goal of AI system design?',
+                        options: ['Only intelligence', 'Valuable intelligence delivered safely to users', 'Only model accuracy', 'Only cost reduction'],
+                        correct: 1,
+                        explanation: 'The main goal is not only intelligence, but valuable intelligence delivered safely to users. Good AI systems must be useful, scalable, secure, reliable, and human-centered.'
+                    },
+                    {
+                        question: 'What should UX in AI products communicate to users?',
+                        options: ['Only what the AI can do', 'What the AI can do, what it cannot do, confidence or uncertainty, and human control options', 'Only the model\'s accuracy', 'Only the cost per request'],
+                        correct: 1,
+                        explanation: 'In AI products, UX must show what the AI can do, what the AI cannot do, confidence or uncertainty, and human control options.'
+                    },
+                    {
+                        question: 'Which of the following is an example of an AI system?',
+                        options: ['A simple calculator', 'A recommendation system, fraud detection, smart learning platforms, or autonomous vehicles', 'A static website with no data', 'A plain text editor'],
+                        correct: 1,
+                        explanation: 'Examples of AI systems include ChatGPT-like assistants, recommendation systems, fraud detection systems, smart learning platforms, medical diagnosis support, AI search engines, autonomous vehicles, predictive maintenance, intelligent customer service, and smart city traffic systems.'
+                    },
+                    {
+                        question: 'What is the assignment at the end of Chapter 1?',
+                        options: ['Train a large language model from scratch', 'Design a simple AI product idea and describe target user, user problem, AI capability, required data, expected output, and main risks', 'Build a database only', 'Write a research paper on AI ethics'],
+                        correct: 1,
+                        explanation: 'The assignment is to design a simple AI product idea and describe: target user, user problem, AI capability, required data, expected output, and main risks.'
+                    }
+                ]
+            }
+        ]
     }
 ];
 
