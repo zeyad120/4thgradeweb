@@ -579,7 +579,62 @@ const COURSES = [
         code: 'SP405',
         icon: 'smartphone',
         description: 'Mobile application development',
-        quizzes: []
+        quizzes: [
+            {
+                id: 'sp-quiz1',
+                title: 'quiz-lecture-1',
+                questions: [
+                    {
+                        question: 'Which term answers the question: "What does the computer provide to the programmer?"',
+                        options: ['Computer Architecture', 'Computer Organization', 'Computer Design', 'Logic Design'],
+                        correct: 0,
+                        explanation: 'Architecture is the programmer-visible behavior: the ISA, instructions and registers (the "what").'
+                    },
+                    {
+                        question: 'Which of the following is Organization rather than Architecture?',
+                        options: ['Having 32 general-purpose registers', 'Having an add instruction in the ISA', 'The datapath and control unit', 'Instruction size of 32 bits'],
+                        correct: 2,
+                        explanation: 'Datapath, control, ALU, cache and pipeline describe how the hardware implements the architecture.'
+                    },
+                    {
+                        question: 'Choosing 4 cores, a 5-stage pipeline and 2 GHz because of power and cost is:',
+                        options: ['Architecture', 'Organization', 'A design decision', 'Compiler optimization'],
+                        correct: 2,
+                        explanation: 'Design is the engineering process of choosing how to build the system under constraints (power, cost, performance).'
+                    },
+                    {
+                        question: 'Increasing the number of transistors causes which problems?',
+                        options: ['Memory latency, power wall and heat', 'Only fewer registers', 'Smaller instruction size', 'No problems at all'],
+                        correct: 0,
+                        explanation: 'From the lecture notes: memory latency, communication overhead, the power wall and heat.'
+                    },
+                    {
+                        question: 'In MIPS, what does lw mean?',
+                        options: ['Load byte (8 bits)', 'Load half word (16 bits)', 'Load word (4 bytes = 32 bits)', 'Store word'],
+                        correct: 2,
+                        explanation: 'lw = load word = 4 bytes = 32 bits. lb is byte, lh is half word, and sw is store.'
+                    },
+                    {
+                        question: 'What is the correct instruction order for C = A + B in MIPS?',
+                        options: ['add → lw A → lw B → sw C', 'lw A → lw B → add → sw C', 'sw C → add → lw A → lw B', 'lw A → add → lw B → sw C'],
+                        correct: 1,
+                        explanation: 'Load A and B into registers, add them, then store the result in C.'
+                    },
+                    {
+                        question: 'In lw $t0, 4($t1), what is the number 4 called and what happens to it?',
+                        options: ['Opcode, shifted', 'Offset, sign-extended', 'Register number, decoded', 'Immediate, zero-filled only'],
+                        correct: 1,
+                        explanation: '4 is the offset; it is sign-extended to 32 bits before being added to the address in $t1.'
+                    },
+                    {
+                        question: 'What is the memory hierarchy order from fastest to slowest?',
+                        options: ['Register → Cache → RAM → SSD → HDD', 'Cache → Register → RAM → HDD → SSD', 'RAM → Cache → Register → SSD → HDD', 'Register → RAM → Cache → HDD → SSD'],
+                        correct: 0,
+                        explanation: 'Going down the hierarchy, speed decreases and capacity increases: Register, Cache, RAM, SSD, HDD, Cloud.'
+                    }
+                ]
+            }
+        ]
     },
     {
         id: 'sd',
