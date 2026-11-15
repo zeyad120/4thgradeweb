@@ -1181,15 +1181,17 @@ function showCourseQuizzes(courseId) {
     const container = document.getElementById('quiz-container');
     
     container.innerHTML = `
-        <h2 style="margin-bottom: 20px; text-align: center;">${currentCourse.name}</h2>
-        <div style="display: flex; flex-direction: column; gap: 15px;">
-            ${quizzes.map((quiz, index) => `
-                <div class="course-card" onclick="startQuiz(${index})" style="cursor: pointer;">
-                    <h3>${quiz.title}</h3>
-                    <p>${quiz.questions.length} Questions</p>
-                </div>
-            `).join('')}
-            <button class="btn btn-outline" onclick="closeQuizModal()" style="margin-top: 20px;">Close</button>
+        <div style="flex: 1; overflow-y: auto; padding: 30px; width: 100%; box-sizing: border-box;">
+            <h2 style="margin-bottom: 20px; text-align: center;">${currentCourse.name}</h2>
+            <div style="display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto;">
+                ${quizzes.map((quiz, index) => `
+                    <div class="course-card" onclick="startQuiz(${index})" style="cursor: pointer;">
+                        <h3>${quiz.title}</h3>
+                        <p>${quiz.questions.length} Questions</p>
+                    </div>
+                `).join('')}
+                <button class="btn btn-outline" onclick="closeQuizModal()" style="margin-top: 20px;">Close</button>
+            </div>
         </div>
     `;
     
