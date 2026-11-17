@@ -553,6 +553,144 @@ const COURSES = [
                         explanation: 'Going down the hierarchy, speed decreases and capacity increases: Register, Cache, RAM, SSD, HDD, Cloud.'
                     }
                 ]
+            },
+            {
+                id: 'sp-quiz3',
+                title: 'Lecture 2 · Instruction Set Architecture and Interrupts MCQs for midterm',
+                questions: [
+                    {
+                        question: 'What is the main idea of the "software approach" compared to a hardwired program?',
+                        options: ['Rewire the hardware for each new task', 'Supply a new set of control signals instead of rewiring', 'Use only ALU operations', 'Remove the control unit'],
+                        correct: 1,
+                        explanation: 'The software approach stores the program in memory; changing tasks means supplying new control signals, not rewiring hardware.'
+                    },
+                    {
+                        question: 'The Control Unit and the ALU together constitute the:',
+                        options: ['Main memory', 'I/O module', 'CPU', 'Bus'],
+                        correct: 2,
+                        explanation: 'The CPU consists of the control unit (CU) and the arithmetic-logic unit (ALU), plus registers.'
+                    },
+                    {
+                        question: 'An instruction cycle consists of which two steps?',
+                        options: ['Decode and store', 'Fetch and execute', 'Read and write', 'Interrupt and return'],
+                        correct: 1,
+                        explanation: 'Every instruction goes through a fetch cycle and an execute cycle.'
+                    },
+                    {
+                        question: 'Which register holds the address of the next instruction to be fetched?',
+                        options: ['IR', 'AC', 'PC', 'MBR'],
+                        correct: 2,
+                        explanation: 'The Program Counter (PC) holds the address of the next instruction to fetch.'
+                    },
+                    {
+                        question: 'After an instruction is fetched, it is loaded into the:',
+                        options: ['PC', 'IR', 'AC', 'MAR'],
+                        correct: 1,
+                        explanation: 'The fetched instruction is loaded into the Instruction Register (IR) for decoding and execution.'
+                    },
+                    {
+                        question: 'Which of the following is NOT an action that may happen in an execute cycle?',
+                        options: ['Processor–memory data transfer', 'Processor–I/O data transfer', 'Data processing', 'Incrementing the interrupt vector table'],
+                        correct: 3,
+                        explanation: 'Execute-cycle actions are processor–memory transfer, processor–I/O transfer, data processing, and control transfer. Incrementing the interrupt vector table is not one of them.'
+                    },
+                    {
+                        question: 'In the hypothetical machine, the instruction is 16 bits: 4 bits opcode and 12 bits address. How many different opcodes and how many directly addressable words are possible?',
+                        options: ['16 opcodes, 4096 words', '12 opcodes, 16 words', '4096 opcodes, 16 words', '8 opcodes, 1024 words'],
+                        correct: 0,
+                        explanation: '4 bits gives 2^4 = 16 opcodes; 12 bits gives 2^12 = 4096 addressable words.'
+                    },
+                    {
+                        question: 'In the program example, the instruction `1940` (hex) with PC = 300 does what?',
+                        options: ['Stores AC into location 940', 'Adds the content of location 940 to AC', 'Loads AC from location 940', 'Jumps to location 940'],
+                        correct: 2,
+                        explanation: 'Opcode 1 is Load: it loads the contents of memory location 940 into the accumulator AC.'
+                    },
+                    {
+                        question: 'How many fetch and execute cycles are needed for the 3-instruction example program (Load, Add, Store)?',
+                        options: ['1 fetch, 3 execute', '3 fetch, 1 execute', '3 fetch, 3 execute', '6 fetch, 6 execute'],
+                        correct: 2,
+                        explanation: 'Each of the 3 instructions needs one fetch cycle and one execute cycle: 3 fetches and 3 executes.'
+                    },
+                    {
+                        question: 'A memory has 256K words of 32 bits each. How many bits are needed for the address part of the instruction?',
+                        options: ['8', '16', '18', '32'],
+                        correct: 2,
+                        explanation: '256K = 256 × 1024 = 2^18 words, so the address field needs 18 bits.'
+                    },
+                    {
+                        question: 'If an instruction must select one of 64 registers, the register field needs:',
+                        options: ['4 bits', '6 bits', '8 bits', '64 bits'],
+                        correct: 1,
+                        explanation: '64 = 2^6, so 6 bits are needed to select among 64 registers.'
+                    },
+                    {
+                        question: 'Which instruction cycle state determines the address of an operand located in memory or I/O?',
+                        options: ['Instruction Fetch (IF)', 'Instruction Operation Decoding (IOD)', 'Operand Address Calculation (OAC)', 'Operand Store (OS)'],
+                        correct: 2,
+                        explanation: 'The Operand Address Calculation (OAC) state determines the effective address of a memory or I/O operand.'
+                    },
+                    {
+                        question: 'Which instruction cycle states involve only internal processor operations?',
+                        options: ['IF and OS', 'OAC and OF', 'IOD and DO', 'IF and OF'],
+                        correct: 2,
+                        explanation: 'Instruction Operation Decoding (IOD) and Data Operation (DO) involve only internal processor operations.'
+                    },
+                    {
+                        question: 'A division by zero or an arithmetic overflow generates which class of interrupt?',
+                        options: ['Timer', 'I/O', 'Hardware failure', 'Program'],
+                        correct: 3,
+                        explanation: 'Errors like division by zero or arithmetic overflow are program (trap) interrupts.'
+                    },
+                    {
+                        question: 'Which interrupt class is used in pre-emptive multitasking (e.g., doing a data backup at regular intervals)?',
+                        options: ['Program', 'Timer', 'I/O', 'Hardware failure'],
+                        correct: 1,
+                        explanation: 'Timer interrupts enable pre-emptive multitasking by interrupting the processor at regular intervals.'
+                    },
+                    {
+                        question: 'When an interrupt is pending, the processor:',
+                        options: ['Ignores it and fetches the next instruction', 'Saves the context and sets the PC to the start of the interrupt handler', 'Resets the whole system', 'Clears the IR and halts permanently'],
+                        correct: 1,
+                        explanation: 'On an interrupt, the processor saves the current context and jumps to the interrupt handler via the PC.'
+                    },
+                    {
+                        question: 'When the interrupt handler finishes, the processor:',
+                        options: ['Restarts the program from the beginning', 'Resumes the user program at the point of interruption', 'Skips the interrupted instruction', 'Waits for another interrupt'],
+                        correct: 1,
+                        explanation: 'The saved context is restored and the user program resumes at the point of interruption.'
+                    },
+                    {
+                        question: 'In the "Disable interrupts" approach for multiple interrupts:',
+                        options: ['Higher priority interrupts can interrupt lower ones', 'Further interrupts are ignored/pending until the current one is processed, then handled in sequence', 'Interrupts are handled randomly', 'Interrupts are permanently disabled'],
+                        correct: 1,
+                        explanation: 'With interrupts disabled, further interrupts pend until the current handler finishes, then they are serviced in sequence.'
+                    },
+                    {
+                        question: 'What is the main disadvantage of the sequential (disable interrupts) approach?',
+                        options: ['It is too complex', 'It does not take relative priority and time-critical needs into account', 'It needs extra hardware', 'It loses interrupts'],
+                        correct: 1,
+                        explanation: 'The sequential approach cannot prioritize interrupts, so time-critical ones may be delayed.'
+                    },
+                    {
+                        question: 'Which approach allows a low-priority interrupt handler to be interrupted by a higher-priority one?',
+                        options: ['Sequential', 'Nested (define priorities)', 'Polling', 'DMA'],
+                        correct: 1,
+                        explanation: 'The nested approach defines priorities so a higher-priority interrupt can interrupt a lower-priority handler.'
+                    },
+                    {
+                        question: 'Why is an interrupt not needed when using DMA?',
+                        options: ['DMA is slower than interrupts', 'The I/O device exchanges data with memory directly, bypassing the processor', 'DMA uses only registers', 'DMA disables the memory'],
+                        correct: 1,
+                        explanation: 'DMA lets the I/O device transfer data directly to/from memory without processor intervention, so no interrupts are needed per transfer.'
+                    },
+                    {
+                        question: 'In a "short I/O wait" scenario with interrupts, the processor:',
+                        options: ['Waits idle for the I/O to finish', 'Has no waiting time', 'Must restart the program', 'Cannot execute the second WRITE'],
+                        correct: 1,
+                        explanation: 'With interrupts, the processor continues executing other instructions while I/O completes, so there is no waiting time.'
+                    }
+                ]
             }
         ]
     },
