@@ -231,7 +231,134 @@ const COURSES = [
                         explanation: 'Apparent movement is perceived motion without physical retinal movement, produced by rapid still images.'
                     }
                 ]
+            },
+            {
+                id: 'cp-quiz2',
+                title: 'Lecture 2 · Attention MCQs for midterm',
+                questions: [
+                    {
+                        question: 'How do attention and consciousness relate to one another?',
+                        options: ['Attention and consciousness are identical processes', 'Attention is possible even in the complete absence of consciousness', 'Consciousness is a vast field, and attention is an active, focused part of it', 'Consciousness is a small subset of selective attention'],
+                        correct: 2,
+                        explanation: 'Attention is not possible without consciousness, yet they are not identical; consciousness is vast while attention is its active, concentrated part.'
+                    },
+                    {
+                        question: 'Which of the following best describes attention as a \'bridge\'?',
+                        options: ['It connects motor neurons directly to sensory receptors without brain involvement', 'It brings selectively focused parts of the external world into subjective consciousness to regulate behavior', 'It converts unconscious dreams into voluntary motor reflexes', 'It separates visual perception from auditory sensation'],
+                        correct: 1,
+                        explanation: 'Attention is the bridge over which selectively focused aspects of the external world enter subjective consciousness so behavior can be regulated.'
+                    },
+                    {
+                        question: 'Which of the following is a characteristic of attention?',
+                        options: ['It remains permanently fixed on a single object without shifting', 'It has an unlimited span capable of processing all environmental stimuli simultaneously', 'It is a selective mental activity that constantly shifts and requires sensory and motor adjustments', 'It operates independently of alertness or preparedness'],
+                        correct: 2,
+                        explanation: 'Attention is selective, constantly shifting, has a narrow span, and represents a state of preparedness requiring sensory and motor adjustments.'
+                    },
+                    {
+                        question: 'Solving a complex math problem or answering questions during an examination requires which type of attention?',
+                        options: ['Enforced non-volitional attention', 'Spontaneous non-volitional attention', 'Volitional (voluntary) attention', 'Discontinuous distraction'],
+                        correct: 2,
+                        explanation: 'Voluntary (volitional) attention requires conscious effort, such as during problem solving or exams.'
+                    },
+                    {
+                        question: 'A student completing homework due to a single act of will triggered by fear of punishment demonstrates:',
+                        options: ['Implicit volitional attention', 'Explicit volitional attention', 'Enforced non-volitional attention', 'Spontaneous non-volitional attention'],
+                        correct: 0,
+                        explanation: 'Implicit volitional attention is aroused by a single act of will, such as doing homework out of fear of punishment.'
+                    },
+                    {
+                        question: 'Attention obtained through repeated acts of will, strong motivation, and sustained struggle (e.g., during exam preparation days) is called:',
+                        options: ['Implicit volitional attention', 'Explicit volitional attention', 'Enforced non-volitional attention', 'Spontaneous non-volitional attention'],
+                        correct: 1,
+                        explanation: 'Explicit volitional attention requires repeated acts of will, hard struggle, and strong motivation.'
+                    },
+                    {
+                        question: 'Involuntary attention aroused automatically by instincts or intense stimuli such as loud noises, bright lights, or pain is known as:',
+                        options: ['Explicit volitional attention', 'Implicit volitional attention', 'Enforced non-volitional attention', 'Preparatory set'],
+                        correct: 2,
+                        explanation: 'Enforced non-volitional attention is involuntary attention aroused without conscious effort by instincts or strong stimuli.'
+                    },
+                    {
+                        question: 'Spontaneous non-volitional attention is primarily driven by:',
+                        options: ['Fear of punishment and external threats', 'Preformed sentiments and internal motivation toward people, objects, or things', 'Acute drug or alcohol intoxication', 'Repeated acts of conscious struggle'],
+                        correct: 1,
+                        explanation: 'Spontaneous non-volitional attention is involuntary attention driven by internal motivation and preformed sentiments.'
+                    },
+                    {
+                        question: 'Which of the following is an EXTERNAL (objective) factor influencing attention?',
+                        options: ['Basic motives such as hunger and thirst', 'Personal habits and past experience', 'Contrast between a stimulus and its surroundings', 'Immediate aims and ultimate life goals'],
+                        correct: 2,
+                        explanation: 'Contrast (e.g., black dust in milk) is an external/objective factor; motives, habits, and goals are internal factors.'
+                    },
+                    {
+                        question: 'What happens when a stimulus is repeated excessively, such as loud machinery noise for workers in a factory?',
+                        options: ['It permanently increases the worker\'s attention span', 'It diminishes attention as workers become adjusted to the environment', 'It converts into discontinuous distraction', 'It triggers explicit volitional attention'],
+                        correct: 1,
+                        explanation: 'While moderate repetition attracts attention, excessive repetition diminishes it because people adjust to the stimulus.'
+                    },
+                    {
+                        question: 'In the midst of continuous background noise, a sudden moment of silence immediately draws our attention due to which external factor?',
+                        options: ['Change', 'Size', 'Definite form', 'Habit'],
+                        correct: 0,
+                        explanation: 'Change in stimulus conditions — such as sudden silence during continuous noise — easily draws attention.'
+                    },
+                    {
+                        question: 'When an engineer and a botanist walk down the same path, the engineer notices buildings while the botanist notices trees. This illustrates which internal factor?',
+                        options: ['Contrast', 'Interest', 'Intensity', 'Novelty'],
+                        correct: 1,
+                        explanation: 'Interest is an internal (subjective) factor: we attend to aspects of the environment aligned with our interests.'
+                    },
+                    {
+                        question: 'Which statement accurately describes the relationship between attention and inattention?',
+                        options: ['Inattention is a pathological disorder that prevents all learning', 'Inattention lies at the center of consciousness, while attention lies at the edge', 'Inattention is required for attention, because focusing on one thing requires overlooking others', 'Attention and inattention cannot exist at the same time'],
+                        correct: 2,
+                        explanation: 'Attention occupies the center of consciousness; inattention to irrelevant stimuli is necessary to attend to a chosen target.'
+                    },
+                    {
+                        question: 'Which of the following is an INTERNAL source of distraction?',
+                        options: ['Improper classroom lighting and inadequate ventilation', 'Defective voice of the teacher', 'Emotional disturbances, fatigue, anger, or lack of interest', 'Uncomfortable seating'],
+                        correct: 2,
+                        explanation: 'Emotional disturbances, fatigue, anger, and lack of interest are internal distractors; lighting, seating, and noise are external.'
+                    },
+                    {
+                        question: 'Why is discontinuous distraction more disruptive to work than continuous distraction?',
+                        options: ['Because continuous distraction is always louder than discontinuous distraction', 'Because adjustment to continuous distraction occurs quickly, whereas irregular intervals prevent adjustment', 'Because discontinuous distraction only occurs during sleep', 'Because continuous distraction is exclusively internal'],
+                        correct: 1,
+                        explanation: 'People adjust quickly to continuous distraction, while irregular intervals prevent adjustment.'
+                    },
+                    {
+                        question: 'What is the average span of attention for letters or digits in a normal adult compared to a child?',
+                        options: ['2 to 3 for adults; 1 to 2 for children', '4 to 5 for adults; 6 to 7 for children', '6 to 7 for adults; 4 to 5 for children', '10 to 12 for adults; 8 to 9 for children'],
+                        correct: 2,
+                        explanation: 'The average span of attention is about 4–5 items in children and 6–7 letters or digits in adults.'
+                    },
+                    {
+                        question: 'Which instrument is used experimentally to determine the span of attention?',
+                        options: ['Electroencephalograph (EEG)', 'Tachistoscope', 'Ophthalmoscope', 'Sphygmomanometer'],
+                        correct: 1,
+                        explanation: 'A tachistoscope presents visual stimuli for a fraction of a second to measure the span of attention.'
+                    },
+                    {
+                        question: 'Which of the following is classified as a NEUROLOGICAL cause of impaired attention?',
+                        options: ['Fatigue and boredom', 'Organic brain lesion such as head injury, epilepsy, or increased intracranial tension', 'Hysterical dissociation', 'Acute alcohol intoxication'],
+                        correct: 1,
+                        explanation: 'Neurological causes involve organic brain lesions such as head injury, epilepsy, or increased intracranial tension.'
+                    },
+                    {
+                        question: 'Attention Deficit Hyperactivity Disorder (ADHD), mania, and hysterical dissociation are classified under which category of impaired attention causes?',
+                        options: ['Normal physiological causes', 'Neurological causes', 'Intoxication causes', 'Psychogenic causes'],
+                        correct: 3,
+                        explanation: 'ADHD, hysteria/dissociation, and mania are listed as psychogenic causes of impaired attention.'
+                    },
+                    {
+                        question: 'Why is assessing attention clinically important during a Mental Status Examination (MSE)?',
+                        options: ['It directly measures peripheral nerve conduction speed', 'Alterations in attention span and ability help diagnose various psychiatric and neurological psychopathologies', 'It replaces the need for neuroimaging in head trauma', 'It determines visual acuity in the retina'],
+                        correct: 1,
+                        explanation: 'Attention is a cardinal higher mental function; assessing it during an MSE aids diagnosis of psychiatric and neurological conditions.'
+                    }
+                ]
             }
+
         ]
     },
     {
