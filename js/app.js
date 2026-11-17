@@ -859,7 +859,242 @@ const COURSES = [
                         explanation: 'No single technology offers high capacity, fast access, and low cost at once — hence the hierarchy.'
                     }
                 ]
+            },
+            {
+                id: 'sp-quiz6',
+                title: 'Lecture 6 · Cache Design, Performance & Mapping MCQs for midterm',
+                questions: [
+                    {
+                        question: 'Effective Access Time (EAT) with a hit rate h, cache time t1, and next-level time t2 is:',
+                        options: ['h·t2 + (1−h)·t1', 'h·t1 + (1−h)(t1 + t2)', 't1 + t2', 'h·(t1 + t2)'],
+                        correct: 1,
+                        explanation: 'On a hit (probability h) only t1 is paid; on a miss (1−h) both t1 and t2 are paid.'
+                    },
+                    {
+                        question: 'With t1 = 3 ns, t2 = 40 ns, and an 80% hit rate, the EAT is:',
+                        options: ['7 ns', '9 ns', '11 ns', '43 ns'],
+                        correct: 2,
+                        explanation: 'EAT = 0.8×3 + 0.2×(3+40) = 2.4 + 8.6 = 11 ns.'
+                    },
+                    {
+                        question: 'With the same times and a 90% hit rate, the EAT is:',
+                        options: ['5 ns', '7 ns', '11 ns', '3 ns'],
+                        correct: 1,
+                        explanation: 'EAT = 0.9×3 + 0.1×(3+40) = 2.7 + 4.3 = 7 ns.'
+                    },
+                    {
+                        question: 'CPI is defined as:',
+                        options: ['Total clock cycles / Number of instructions', 'Instructions / Total clock cycles', 'Clock rate × instructions', 'Miss rate × miss penalty'],
+                        correct: 0,
+                        explanation: 'CPI (cycles per instruction) = total clock cycles divided by the number of instructions.'
+                    },
+                    {
+                        question: 'CPU time equals:',
+                        options: ['Instruction count / CPI', 'CPI / Clock cycle time', 'Miss rate × Hit time', 'Instruction count × CPI × Clock cycle time'],
+                        correct: 3,
+                        explanation: 'CPU time = instruction count × CPI × clock cycle time.'
+                    },
+                    {
+                        question: 'Memory-stall cycles are calculated as:',
+                        options: ['Memory accesses × Hit rate', 'Memory accesses × Miss rate × Miss penalty', 'Instructions × Base CPI', 'Miss rate / Miss penalty'],
+                        correct: 1,
+                        explanation: 'Stall cycles = number of memory accesses × miss rate × miss penalty.'
+                    },
+                    {
+                        question: 'IPC (Instructions Per Cycle) is:',
+                        options: ['Equal to CPI', 'CPI × clock rate', 'The inverse of CPI (1 / CPI)', 'Miss rate × penalty'],
+                        correct: 2,
+                        explanation: 'IPC is the inverse of CPI: IPC = 1 / CPI.'
+                    },
+                    {
+                        question: 'Given: I-cache miss rate 2%, D-cache miss rate 4%, base CPI 2, miss penalty 100 cycles, loads/stores 36%. For 100 instructions, the I-cache stall cycles are:',
+                        options: ['144', '200', '344', '544'],
+                        correct: 1,
+                        explanation: 'I-cache accesses = 100 (one fetch per instruction): 100 × 0.02 × 100 = 200 cycles.'
+                    },
+                    {
+                        question: 'In the same example, the D-cache stall cycles are:',
+                        options: ['36', '100', '144', '200'],
+                        correct: 2,
+                        explanation: 'Data accesses = 36% of 100 = 36: 36 × 0.04 × 100 = 144 cycles.'
+                    },
+                    {
+                        question: 'In the same example, the total memory-stall cycles are:',
+                        options: ['200', '344', '544', '144'],
+                        correct: 1,
+                        explanation: 'Total stalls = 200 (I-cache) + 144 (D-cache) = 344 cycles.'
+                    },
+                    {
+                        question: 'In the same example, the total CPI is:',
+                        options: ['2.00', '3.44', '5.44', '6.44'],
+                        correct: 2,
+                        explanation: 'Total cycles = base (100×2 = 200) + stalls 344 = 544; CPI = 544/100 = 5.44.'
+                    },
+                    {
+                        question: 'A hit time of 1 cycle, miss rate of 5%, and miss penalty of 20 cycles give an AMAT of:',
+                        options: ['2 cycles', '1 cycle', '5 cycles', '21 cycles'],
+                        correct: 0,
+                        explanation: 'AMAT = 1 + 0.05×20 = 1 + 1 = 2 cycles.'
+                    },
+                    {
+                        question: 'A 4 GHz processor has a cycle time of:',
+                        options: ['4 ns', '0.4 ns', '0.25 ns', '2.5 ns'],
+                        correct: 2,
+                        explanation: 'Cycle time = 1 / 4 GHz = 0.25 ns.'
+                    },
+                    {
+                        question: 'With a 100 ns main memory access at 4 GHz, the memory penalty in cycles is:',
+                        options: ['25', '400', '100', '4000'],
+                        correct: 1,
+                        explanation: 'Penalty = 100 ns / 0.25 ns = 400 cycles.'
+                    },
+                    {
+                        question: 'With base CPI = 1, L1 miss rate = 2%, and a 400-cycle memory penalty (no L2), the CPI is:',
+                        options: ['1.02', '3.4', '9', '400'],
+                        correct: 2,
+                        explanation: 'CPI = 1 + 0.02×400 = 1 + 8 = 9.'
+                    },
+                    {
+                        question: 'After adding an L2 (20 cycles, global miss rate 0.5%), the CPI becomes:',
+                        options: ['2.6', '3.4', '9', '1.4'],
+                        correct: 1,
+                        explanation: 'The L2 absorbs most misses with only a 20-cycle local penalty, so the effective miss penalty drops and the CPI falls to about 3.4 in the lecture\'s worked example.'
+                    },
+                    {
+                        question: 'The speedup from adding the L2 in that example is approximately:',
+                        options: ['1.5×', '3.4×', '2.6×', '9×'],
+                        correct: 2,
+                        explanation: 'Speedup = old CPI / new CPI = 9 / 3.4 ≈ 2.6×.'
+                    },
+                    {
+                        question: 'What is the design focus of L1 and L2 caches?',
+                        options: ['L1 large and slow; L2 small and fast', 'Both are identical', 'L1 is secondary memory', 'L1 small and fast (low hit time); L2 larger and more associative (low miss rate)'],
+                        correct: 3,
+                        explanation: 'L1 optimizes hit time (small, fast); L2 optimizes miss rate (larger, more associative).'
+                    },
+                    {
+                        question: 'The hardware unit that translates virtual addresses into physical addresses is the:',
+                        options: ['ALU', 'MMU', 'Control unit', 'DMA controller'],
+                        correct: 1,
+                        explanation: 'The Memory Management Unit (MMU) performs virtual-to-physical address translation.'
+                    },
+                    {
+                        question: 'The TLB (Translation Lookaside Buffer) is:',
+                        options: ['A type of disk', 'A cache of recent virtual-to-physical address translations', 'A bus arbiter', 'A register file'],
+                        correct: 1,
+                        explanation: 'The TLB caches recent page-table translations to speed up address translation.'
+                    },
+                    {
+                        question: 'According to the lecture, which levels use physical addressing?',
+                        options: ['L1 only', 'None', 'L2, L3, and main memory', 'All levels use virtual addressing'],
+                        correct: 2,
+                        explanation: 'L1 uses virtual addressing via the TLB; lower levels (L2, L3, main memory) use physical addresses.'
+                    },
+                    {
+                        question: 'Page size = 1024 bytes and logical address = 3100. What are the page number P and offset D?',
+                        options: ['P = 2, D = 28', 'P = 3, D = 28', 'P = 3, D = 1024', 'P = 7, D = 28'],
+                        correct: 1,
+                        explanation: 'P = floor(3100/1024) = 3; D = 3100 mod 1024 = 28.'
+                    },
+                    {
+                        question: 'If page 3 maps to frame 7 (page size 1024, offset 28), the physical address is:',
+                        options: ['3100', '7168', '28', '7196'],
+                        correct: 3,
+                        explanation: 'Physical address = frame × page size + offset = 7×1024 + 28 = 7196.'
+                    },
+                    {
+                        question: 'In direct mapping, a given memory block can map to how many cache locations?',
+                        options: ['Exactly one', 'Two', 'Any', 'Four'],
+                        correct: 0,
+                        explanation: 'Direct mapping assigns each memory block to exactly one cache location (block mod number of lines).'
+                    },
+                    {
+                        question: 'In a 16-byte memory with a 4-byte cache (four 1-byte blocks), locations 0, 4, 8, 12 map to:',
+                        options: ['Cache block 1', 'Cache block 0', 'Cache block 2', 'Different blocks each'],
+                        correct: 1,
+                        explanation: 'Locations 0, 4, 8, 12 differ by multiples of the 4-byte cache size, so all map to cache block 0 — causing conflict misses.'
+                    },
+                    {
+                        question: 'Address 14 (1110 binary) with a 4-block direct-mapped cache maps to cache block:',
+                        options: ['0', '1', '3', '2'],
+                        correct: 3,
+                        explanation: 'With 4 blocks, the index is the 2 least significant bits: 14 mod 4 = 2.'
+                    },
+                    {
+                        question: 'Taking the least significant k bits of an address is equivalent to:',
+                        options: ['Address / 2ᵏ', 'Address × 2ᵏ', 'Address mod 2ᵏ', 'Address + 2ᵏ'],
+                        correct: 2,
+                        explanation: 'The low k bits give the remainder mod 2ᵏ, which selects the cache set/block.'
+                    },
+                    {
+                        question: 'In the worked comparison (4-line cache), which mapping gave the fewest misses?',
+                        options: ['Direct mapped (5 misses)', 'Fully associative (3 misses)', '2-way set associative (4 misses)', 'All were equal'],
+                        correct: 1,
+                        explanation: 'Fully associative had the fewest misses (3), since any block can go anywhere.'
+                    },
+                    {
+                        question: 'How many compulsory misses occur in every design in that example?',
+                        options: ['0', '2', '3', '5'],
+                        correct: 2,
+                        explanation: 'Compulsory misses = first access to each unique block = 3 in every mapping.'
+                    },
+                    {
+                        question: 'A compulsory miss is:',
+                        options: ['A miss caused by a conflict', 'The first access to a block, so the cache cannot have it yet', 'A miss caused by a full disk', 'A miss that never happens'],
+                        correct: 1,
+                        explanation: 'A compulsory (cold) miss happens on the first access to a block — the cache cannot contain it yet.'
+                    },
+                    {
+                        question: 'A conflict miss happens when:',
+                        options: ['A block is accessed for the first time', 'The CPU is idle', 'A block was evicted because another block needed the same place', 'The bus is busy'],
+                        correct: 2,
+                        explanation: 'A conflict miss occurs when a needed block was evicted because another block mapped to the same cache location.'
+                    },
+                    {
+                        question: 'What is the trade-off of increasing associativity?',
+                        options: ['Fewer conflict misses, but more comparators and a slightly longer hit time', 'More conflict misses and lower cost', 'No change in misses', 'Fewer comparators and a faster hit time'],
+                        correct: 0,
+                        explanation: 'Higher associativity reduces conflict misses but requires more comparators and slightly increases hit time.'
+                    },
+                    {
+                        question: 'For a 4-line cache, how many index bits do direct mapped, 2-way set associative, and fully associative use, respectively?',
+                        options: ['1, 2, 0', '2, 1, 0', '0, 1, 2', '2, 2, 2'],
+                        correct: 1,
+                        explanation: '4 lines: direct uses 2 index bits (4 sets), 2-way uses 1 bit (2 sets of 2), fully associative uses 0 bits.'
+                    },
+                    {
+                        question: 'When associativity doubles:',
+                        options: ['The index gains 1 bit and the tag loses 1 bit', 'Both gain 1 bit', 'The index loses 1 bit and the tag gains 1 bit', 'Nothing changes'],
+                        correct: 2,
+                        explanation: 'Doubling associativity halves the number of sets, so the index loses 1 bit and the tag gains 1 bit.'
+                    },
+                    {
+                        question: 'Which address field selects the word inside a cache block?',
+                        options: ['Tag', 'Index', 'Set', 'Offset'],
+                        correct: 3,
+                        explanation: 'The offset field selects the specific word/byte within the cache block.'
+                    },
+                    {
+                        question: 'I-cache miss rate 1%, D-cache miss rate 5%, base CPI 1.5, miss penalty 50, loads/stores 20%. The CPI is:',
+                        options: ['1.5', '2.0', '2.5', '3.5'],
+                        correct: 2,
+                        explanation: 'For 100 instructions: I-stalls = 100×0.01×50 = 50; D accesses = 20, D-stalls = 20×0.05×50 = 50. CPI = (100×1.5 + 50 + 50)/100 = 2.5.'
+                    },
+                    {
+                        question: 'Hit time = 2 cycles, miss rate = 10%, miss penalty = 30 cycles. The AMAT is:',
+                        options: ['3 cycles', '5 cycles', '32 cycles', '2.3 cycles'],
+                        correct: 1,
+                        explanation: 'AMAT = 2 + 0.10×30 = 2 + 3 = 5 cycles.'
+                    },
+                    {
+                        question: 'A 4-line cache receives blocks 1, 5, 1, 9. How many misses with direct mapping and with fully associative?',
+                        options: ['4 and 3', '3 and 3', '4 and 4', '2 and 2'],
+                        correct: 0,
+                        explanation: 'Direct: all of 1, 5, 9 map to set 1 (mod 4), so the repeated 1 misses again — 4 misses. Fully associative keeps all blocks, so the second 1 hits — 3 misses.'
+                    }
+                ]
             }
+
 
 
         ]
