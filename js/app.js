@@ -105,7 +105,134 @@ const COURSES = [
         code: 'CP402',
         icon: 'brain',
         description: 'Study of mental processes and behavior',
-        quizzes: []
+        quizzes: [
+            {
+                id: 'cp-quiz1',
+                title: 'Lecture 1 · Psychology of Cognition MCQs for midterm',
+                questions: [
+                    {
+                        question: 'Which of the following best defines cognitive psychology?',
+                        options: ['The study of unconscious emotional conflicts and childhood trauma', 'The scientific study of mental processes such as attention, language use, memory, perception, problem solving, creativity, and thinking', 'The physiological study of nerve conduction velocities in peripheral nerves', 'The behavioral analysis of conditioned reflexes in animals'],
+                        correct: 1,
+                        explanation: 'Cognitive psychology is the scientific study of mental processes including attention, language, memory, perception, problem solving, creativity, and thinking.'
+                    },
+                    {
+                        question: 'Which of the following is NOT listed as one of the core components feeding into Cognitive Psychology?',
+                        options: ['Human Intelligence', 'Perception and Attention', 'Autonomic Reflexes', 'Memory, Language, and Thinking & Problem Solving'],
+                        correct: 2,
+                        explanation: 'The core components are Human Intelligence, Perception, Attention, Memory, Thinking & Problem Solving, and Language — autonomic reflexes are not among them.'
+                    },
+                    {
+                        question: 'Sensory information that has registered in the brain but has NOT yet been interpreted is called:',
+                        options: ['Perception', 'Sensation', 'Closure', 'Preparatory set'],
+                        correct: 1,
+                        explanation: 'Sensation is raw sensory data registered in the brain before interpretation; perception is the interpretation itself.'
+                    },
+                    {
+                        question: 'What is the process by which sensory receptors convert environmental stimuli into neural impulses sent to the brain?',
+                        options: ['Organization', 'Transduction', 'Constancy', 'Adaptation'],
+                        correct: 1,
+                        explanation: 'Transduction is the conversion of physical stimuli (light, sound, etc.) into neural impulses by sensory receptors.'
+                    },
+                    {
+                        question: 'Where does the active interpretation of raw sensory data (perception) take place?',
+                        options: ['In the peripheral receptor cells', 'In the spinal cord dorsal horn', 'In the brain', 'In the autonomic ganglia'],
+                        correct: 2,
+                        explanation: 'Receptors receive stimuli, but perception — the active organization and interpretation of sensory data — occurs in the brain.'
+                    },
+                    {
+                        question: 'Which sequence accurately represents the three perceptual processes?',
+                        options: ['Interpretation → Selection → Organization', 'Organization → Interpretation → Selection', 'Selection → Organization → Interpretation', 'Transduction → Adaptation → Constancy'],
+                        correct: 2,
+                        explanation: 'Perception involves Selection (choosing stimuli), Organization (collecting info into a pattern), and Interpretation (understanding the pattern).'
+                    },
+                    {
+                        question: 'Which of the following is classified as an OBJECTIVE factor affecting perception?',
+                        options: ['Motives or needs', 'Past experience', 'Novelty of the stimulus', 'Preparatory set'],
+                        correct: 2,
+                        explanation: 'Objective factors are physical characteristics of stimuli: intensity, size, distinctness, movement, novelty, duration, repetition, and abrupt change.'
+                    },
+                    {
+                        question: 'Why is a bird about to fly noticed faster than birds sitting quietly on a tree?',
+                        options: ['Size constancy', 'Movement as an objective factor', 'Preparatory set', 'Color constancy'],
+                        correct: 1,
+                        explanation: 'Movement is an objective factor: sudden motion in a still environment is noticed quickly.'
+                    },
+                    {
+                        question: 'What effect does constant repetition of a stimulus have on our perception?',
+                        options: ['It always increases brightness and intensity', 'It causes us to adapt to the repeated stimulus', 'It creates a reversible figure-ground illusion', 'It eliminates shape constancy'],
+                        correct: 1,
+                        explanation: 'Repetition as an objective factor causes us to adapt to the repeated stimulus.'
+                    },
+                    {
+                        question: 'Seeing a moving white line in the sky and guessing it to be an airplane illustrates which subjective factor?',
+                        options: ['Age', 'Past experience', 'Abrupt change', 'Duration'],
+                        correct: 1,
+                        explanation: 'Past experience lets us interpret learned cues — a contrail-like line suggests an airplane.'
+                    },
+                    {
+                        question: 'A person\'s readiness to respond to one specific kind of sensory input rather than others is known as:',
+                        options: ['Preparatory set', 'Figure-ground reversal', 'Proximity', 'Apparent movement'],
+                        correct: 0,
+                        explanation: 'Preparatory set is a subjective factor: readiness to respond to one type of sensory input over others.'
+                    },
+                    {
+                        question: 'In form perception, how is the \'figure\' perceived relative to the \'ground\'?',
+                        options: ['Farther away and less distinct than the background', 'Distinct from and closer to the viewer than the background', 'Identical in depth and merged with the background', 'Always moving in the opposite direction of the viewer'],
+                        correct: 1,
+                        explanation: 'In figure-ground perception, the figure is perceived as distinct from and closer to the viewer than the background.'
+                    },
+                    {
+                        question: 'Which Gestalt principle describes the tendency to group together stimuli that are physically close to one another?',
+                        options: ['Closure', 'Similarity', 'Nearness (Proximity)', 'Continuation'],
+                        correct: 2,
+                        explanation: 'Nearness/proximity: stimuli physically close together tend to be grouped.'
+                    },
+                    {
+                        question: 'The tendency to mentally fill in gaps to perceive an incomplete figure as a finished, consistent unit is called:',
+                        options: ['Closure', 'Continuity', 'Similarity', 'Shape constancy'],
+                        correct: 0,
+                        explanation: 'Closure is the tendency to complete a figure so it has a consistent overall form.'
+                    },
+                    {
+                        question: 'Which Gestalt principle explains grouping elements together because they share the same size, shape, color, or form?',
+                        options: ['Nearness', 'Similarity', 'Closure', 'Figure-ground reversal'],
+                        correct: 1,
+                        explanation: 'Similarity groups stimuli that share size, shape, color, or form.'
+                    },
+                    {
+                        question: 'Judging a friend\'s true height accurately even when they are standing far away in a park demonstrates:',
+                        options: ['Shape constancy', 'Color constancy', 'Size constancy', 'Apparent movement'],
+                        correct: 2,
+                        explanation: 'Size constancy is perceiving an object\'s true size regardless of its distance.'
+                    },
+                    {
+                        question: 'Recognizing a rectangular door as still being rectangular even when it is partially open and casts a trapezoidal image on the retina is an example of:',
+                        options: ['Size constancy', 'Shape constancy', 'Color constancy', 'Depth perception'],
+                        correct: 1,
+                        explanation: 'Shape constancy perceives a known object as keeping its shape regardless of viewing angle.'
+                    },
+                    {
+                        question: 'The ability to view the world in three dimensions and perceive distance is known as:',
+                        options: ['Form perception', 'Time perception', 'Depth perception', 'Color constancy'],
+                        correct: 2,
+                        explanation: 'Depth perception is judging distance in three dimensions (tested by the visual cliff experiment).'
+                    },
+                    {
+                        question: 'When riding in a moving vehicle and looking out the side window, very distant objects such as the moon and sun appear to:',
+                        options: ['Move rapidly in the opposite direction', 'Move in the same direction as the viewer', 'Shrink due to loss of size constancy', 'Disappear into the background'],
+                        correct: 1,
+                        explanation: 'Very distant objects appear to move in the same direction as the viewer, unlike nearby objects.'
+                    },
+                    {
+                        question: 'Movement perceived in the absence of actual physical movement of an image across the retina (e.g., rapid succession of motionless stimuli) is termed:',
+                        options: ['Real movement', 'Apparent movement', 'Preparatory movement', 'Transduction'],
+                        correct: 1,
+                        explanation: 'Apparent movement is perceived motion without physical retinal movement, produced by rapid still images.'
+                    }
+                ]
+            }
+        ]
     },
     {
         id: 'dss',
