@@ -691,7 +691,98 @@ const COURSES = [
                         explanation: 'With interrupts, the processor continues executing other instructions while I/O completes, so there is no waiting time.'
                     }
                 ]
+            },
+            {
+                id: 'sp-quiz4',
+                title: 'Lecture 4 · Buses (Interconnection) MCQs for midterm',
+                questions: [
+                    {
+                        question: 'Why is an interconnection structure needed?',
+                        options: ['To increase the cache size', 'To replace the ALU', 'Because all units (CPU, memory, I/O) must be connected, with different connection types for different units', 'To remove the need for memory'],
+                        correct: 2,
+                        explanation: 'CPU, memory, and I/O modules must all be interconnected, and each unit type has different connection requirements.'
+                    },
+                    {
+                        question: 'Which of the following does a Memory module receive?',
+                        options: ['Interrupts only', 'Addresses and control signals (Read, Write)', 'Only data from peripherals', 'Clock signals only'],
+                        correct: 1,
+                        explanation: 'Memory receives addresses to select a location and control signals (Read/Write) to specify the operation.'
+                    },
+                    {
+                        question: 'Which of the following is an I/O module function?',
+                        options: ['Receive data from a peripheral and send it to the computer', 'Execute arithmetic operations', 'Store instructions permanently', 'Calculate cache tags'],
+                        correct: 0,
+                        explanation: 'An I/O module interfaces peripherals with the computer: it receives data from a peripheral and forwards it.'
+                    },
+                    {
+                        question: 'Which is NOT a CPU function?',
+                        options: ['Reading instructions and data', 'Receiving and acting on interrupts', 'Sending control signals to other units', 'Spinning the disk platters directly'],
+                        correct: 3,
+                        explanation: 'Spinning disk platters is a mechanical/peripheral function, not a CPU function. The CPU reads instructions/data, handles interrupts, and sends control signals.'
+                    },
+                    {
+                        question: 'The I/O module’s connection to the computer includes:',
+                        options: ['Computing physical addresses', 'Replacing the CPU', 'Receiving addresses (e.g., a port number to identify a peripheral) and sending interrupt signals', 'Only sending data'],
+                        correct: 2,
+                        explanation: 'The I/O module receives addresses (like a port number identifying the peripheral) and sends interrupt signals to the computer.'
+                    },
+                    {
+                        question: '"Unibus" (DEC PDP) is an example of:',
+                        options: ['A cache design', 'An interconnection system', 'A memory type', 'An instruction format'],
+                        correct: 1,
+                        explanation: 'Unibus was the interconnection (bus) system used in DEC PDP computers.'
+                    },
+                    {
+                        question: 'Which bus carries the memory read/write and I/O read/write signals?',
+                        options: ['Control bus', 'Data bus', 'Address bus', 'Power bus'],
+                        correct: 0,
+                        explanation: 'The control bus carries command/status signals such as memory read/write and I/O read/write.'
+                    },
+                    {
+                        question: 'Which bus determines the maximum memory capacity of the system?',
+                        options: ['Data bus', 'Control bus', 'Power bus', 'Address bus'],
+                        correct: 3,
+                        explanation: 'The width of the address bus determines how many memory locations can be addressed, hence the maximum memory capacity.'
+                    },
+                    {
+                        question: 'A dedicated bus is one that:',
+                        options: ['Shares lines between address and data', 'Has separate data and address lines', 'Has no control lines', 'Is used only by the CPU'],
+                        correct: 1,
+                        explanation: 'A dedicated bus uses separate lines for address and data, unlike a multiplexed bus.'
+                    },
+                    {
+                        question: 'A multiplexed bus has which advantage and disadvantage?',
+                        options: ['More lines, simpler control', 'Faster, but costs more lines', 'Fewer lines, but more complex control and reduced performance', 'No advantages'],
+                        correct: 2,
+                        explanation: 'Multiplexing shares lines between address and data, saving lines but requiring more complex control and reducing performance.'
+                    },
+                    {
+                        question: 'Bus arbitration is needed because:',
+                        options: ['Only one module may control the bus at a time, but more than one (e.g., CPU and DMA controller) may want it', 'The bus has no data lines', 'The CPU is too slow', 'Memory cannot be shared'],
+                        correct: 0,
+                        explanation: 'Only one module can control the bus at a time, but several (CPU, DMA, I/O) may request it, so arbitration is needed.'
+                    },
+                    {
+                        question: 'In centralised arbitration:',
+                        options: ['Each module has control logic to claim the bus', 'A single hardware device (bus controller or arbiter) controls bus access, and it may be part of the CPU or separate', 'No device controls the bus', 'Only the memory decides'],
+                        correct: 1,
+                        explanation: 'Centralised arbitration uses a single arbiter device (possibly inside the CPU) to decide which module gets the bus.'
+                    },
+                    {
+                        question: 'In distributed arbitration:',
+                        options: ['A single arbiter decides', 'The CPU always wins', 'The bus is disabled', 'Each module may claim the bus, with control logic on all modules'],
+                        correct: 3,
+                        explanation: 'In distributed arbitration there is no central arbiter; every module has control logic and may claim the bus.'
+                    },
+                    {
+                        question: 'Which of the following is NOT carried on the control bus?',
+                        options: ['Interrupt request', 'Clock signals', 'Bus request/grant', 'The program data words being transferred'],
+                        correct: 3,
+                        explanation: 'Data words travel on the data bus. The control bus carries interrupt requests, clock signals, and bus request/grant lines.'
+                    }
+                ]
             }
+
         ]
     },
     {
