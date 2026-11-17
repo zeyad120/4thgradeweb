@@ -357,7 +357,134 @@ const COURSES = [
                         explanation: 'Attention is a cardinal higher mental function; assessing it during an MSE aids diagnosis of psychiatric and neurological conditions.'
                     }
                 ]
+            },
+            {
+                id: 'cp-quiz3',
+                title: 'Lecture 3 · Thinking & Problem Solving MCQs for midterm',
+                questions: [
+                    {
+                        question: 'Which of the following best defines \'thinking\'?',
+                        options: ['A reflex action triggered strictly by direct physical contact with sensory organs', 'A mental activity that does not depend directly upon immediate sensory or motor contact and requires imagining or representing non-present objects', 'The passive registration of raw visual and auditory stimuli in the peripheral receptors', 'An autonomic process regulated exclusively by the spinal cord'],
+                        correct: 1,
+                        explanation: 'Thinking (the \'language of the mind\') does not depend directly on sensory or motor contact and requires representing objects not physically present.'
+                    },
+                    {
+                        question: 'Which anatomical sites are primarily concerned with thinking?',
+                        options: ['Cerebellum, basal ganglia, and dorsal root ganglia', 'Cerebral cortex, limbic system, and reticular activating system', 'Medulla oblongata, pons, and cranial nerve nuclei', 'Optic chiasm, lateral geniculate body, and retina'],
+                        correct: 1,
+                        explanation: 'Thinking is primarily associated with the cerebral cortex, limbic system, and reticular activating system.'
+                    },
+                    {
+                        question: 'Which of the following is NOT listed as one of the six tools of thinking?',
+                        options: ['Signals and symbols', 'Theories and laws', 'Images, language, and concepts', 'Autonomic reflexes'],
+                        correct: 3,
+                        explanation: 'The six tools of thinking are signals, symbols, theories and laws, images, language, and concepts.'
+                    },
+                    {
+                        question: 'Which phase of concept formation involves the ability to grasp the essentials of a whole and understand the hidden meaning behind a word or statement?',
+                        options: ['Generalization', 'Differentiation', 'Abstraction', 'Incubation'],
+                        correct: 2,
+                        explanation: 'Abstraction is grasping the essentials and hidden meanings; clinicians test it by having patients interpret proverbs.'
+                    },
+                    {
+                        question: 'How can a clinician test a patient\'s ability for abstraction during an examination?',
+                        options: ['By using a tachistoscope', 'By asking the patient to interpret proverbs', 'By testing deep tendon reflexes', 'By measuring visual cliff depth perception'],
+                        correct: 1,
+                        explanation: 'Abstraction is tested clinically by asking the patient to interpret proverbs.'
+                    },
+                    {
+                        question: 'Realistic, goal-directed, active thinking used for problem solving that requires attention and leads to exhaustion is called:',
+                        options: ['Autistic imaginative thinking', 'Purposive thinking', 'Concrete thinking', 'Illogical thinking'],
+                        correct: 1,
+                        explanation: 'Purposive thinking is realistic, goal-directed thinking requiring attention, used actively in problem solving, and causing exhaustion.'
+                    },
+                    {
+                        question: 'Which statement is true regarding autistic imaginative thinking?',
+                        options: ['It is goal-directed, requires intense attention, and quickly causes mental exhaustion', 'Moderate daydreaming may beneficially gratify wishes, while excessive daydreaming can lead to withdrawal from reality and isolation', 'It is synonymous with logical scientific verification', 'It is exclusively observed in patients with frontal lobe lesions'],
+                        correct: 1,
+                        explanation: 'Autistic imaginative thinking is unrealistic and uncontrolled; moderate daydreaming gratifies wishes, but excessive daydreaming leads to isolation.'
+                    },
+                    {
+                        question: 'Controlled imaginative thinking (essential for inventing new ideas) passes through four phases in which correct order?',
+                        options: ['Incubation → Preparation → Verification → Inspiration', 'Preparation → Incubation → Inspiration → Verification', 'Inspiration → Preparation → Incubation → Verification', 'Verification → Inspiration → Preparation → Incubation'],
+                        correct: 1,
+                        explanation: 'Controlled imaginative thinking: Preparation (collect data), Incubation (unconscious work), Inspiration (solution emerges), Verification (test it).'
+                    },
+                    {
+                        question: 'A form of thinking characterized by the inability to understand the deeper meaning behind a word or statement is known as:',
+                        options: ['Abstract thinking', 'Concrete thinking', 'Logical thinking', 'Controlled imaginative thinking'],
+                        correct: 1,
+                        explanation: 'Concrete thinking is the inability to grasp the deeper, hidden meaning behind words or statements.'
+                    },
+                    {
+                        question: 'Using relevant data to reach a certain and acceptable solution is defined as:',
+                        options: ['Illogical thinking', 'Logical thinking', 'Autistic thinking', 'Overvalued ideation'],
+                        correct: 1,
+                        explanation: 'Logical thinking uses relevant data to reach a certain, acceptable solution; illogical thinking uses irrelevant data for uncertain conclusions.'
+                    },
+                    {
+                        question: 'Which problem-solving strategy involves systematically exploring and evaluating ALL possible solutions one by one until the correct one is found?',
+                        options: ['Heuristics', 'Algorithms', 'Reduction', 'Finding analogue'],
+                        correct: 1,
+                        explanation: 'Algorithms try every possible solution one by one — time-consuming but guaranteeing a sure solution.'
+                    },
+                    {
+                        question: 'Dividing a complex problem into smaller, more manageable sub-problems is which problem-solving strategy?',
+                        options: ['Reduction', 'Algorithms', 'Finding analogue', 'Incubation'],
+                        correct: 0,
+                        explanation: 'Reduction breaks a larger problem into smaller, more manageable sub-problems.'
+                    },
+                    {
+                        question: 'Which problem-solving strategy relies on recognizing similarities between a current problem and previously solved problems?',
+                        options: ['Heuristics', 'Finding analogue', 'Algorithms', 'Generalization'],
+                        correct: 1,
+                        explanation: 'Finding analogue recognizes similarities between the current problem and past solved problems.'
+                    },
+                    {
+                        question: 'Which of the following is a barrier to effective problem solving related to \'mental set\'?',
+                        options: ['Using an algorithm instead of heuristics', 'Distractibility, lack of motivation/persistence, failure to retrieve memory, and inability to control emotions', 'Remaining flexible and unbiased during evaluation', 'Dividing the problem into sub-problems'],
+                        correct: 1,
+                        explanation: 'Mental-set barriers include distractibility, lack of motivation/persistence, failure to retrieve memory, and poor emotional control.'
+                    },
+                    {
+                        question: 'A false, fixed belief based on incorrect inference about external reality that is not amenable to discussion and inconsistent with the patient\'s intelligence, education, and cultural background is called a(n):',
+                        options: ['Overvalued idea', 'Obsession', 'Delusion', 'Thought block'],
+                        correct: 2,
+                        explanation: 'This is the classic definition of a delusion — a disorder of the content of thinking.'
+                    },
+                    {
+                        question: 'A patient firmly believes that part or all of their body does not exist. Which type of delusion is this?',
+                        options: ['Delusion of reference', 'Delusion of nihilism', 'Delusion of grandiosity', 'Delusion of infidelity'],
+                        correct: 1,
+                        explanation: 'Delusion of nihilism: the patient believes part or all of their body (or the world) does not exist.'
+                    },
+                    {
+                        question: 'A patient believes that strangers on television and people passing on the street are specifically talking about or referring to them. This is a:',
+                        options: ['Delusion of reference', 'Delusion of hypochondriasis', 'Bizarre delusion', 'Somatic delusion'],
+                        correct: 0,
+                        explanation: 'Delusion of reference: the false belief that neutral events or remarks specifically refer to the patient.'
+                    },
+                    {
+                        question: 'Which of the following is classified as a disorder of the CONTROL of thinking?',
+                        options: ['Flight of ideas', 'Thought insertion, thought withdrawal, thought broadcasting, and thought reading', 'Poverty of content of thinking', 'Delusion of grandiosity'],
+                        correct: 1,
+                        explanation: 'Disorders of control include thought reading, insertion, broadcasting, and withdrawal.'
+                    },
+                    {
+                        question: 'Lack of association, incoherent thinking, and poverty of the content of thinking belong to which category of thinking disorders?',
+                        options: ['Disorders of the stream of thinking', 'Disorders of the form of thinking', 'Disorders of the control of thinking', 'Disorders of the content of thinking'],
+                        correct: 1,
+                        explanation: 'Disorders of form include lack of association, incoherence, poverty of content, and vagueness.'
+                    },
+                    {
+                        question: 'Which pairing of \'disorder of the stream of thinking\' and its associated clinical condition is CORRECT?',
+                        options: ['Fast thinking with flight of ideas — Depression', 'Slow retarded thinking — Mania', 'Thought block — Schizophrenia', 'Thought broadcasting — Depression'],
+                        correct: 2,
+                        explanation: 'Stream disorders: fast thinking/flight of ideas in mania, slow retarded thinking in depression, and thought block in schizophrenia.'
+                    }
+                ]
             }
+
 
         ]
     },
