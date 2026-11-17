@@ -781,7 +781,86 @@ const COURSES = [
                         explanation: 'Data words travel on the data bus. The control bus carries interrupt requests, clock signals, and bus request/grant lines.'
                     }
                 ]
+            },
+            {
+                id: 'sp-quiz5',
+                title: 'Lecture 5 · Cache Memory (Memory System Overview & Hierarchy) MCQs for midterm',
+                questions: [
+                    {
+                        question: 'Memory is primarily of which three types?',
+                        options: ['Cache, primary (main), and secondary memory', 'ROM, PROM, EPROM', 'Register, ALU, bus', 'Static, dynamic, flash only'],
+                        correct: 0,
+                        explanation: 'The three main types are cache, primary (main) memory, and secondary memory.'
+                    },
+                    {
+                        question: 'Which relationship holds across memory technologies?',
+                        options: ['Faster access time, lower cost per bit', 'Greater capacity, greater cost per bit', 'Faster access time, greater cost per bit', 'Greater capacity, faster access time'],
+                        correct: 2,
+                        explanation: 'Faster memory costs more per bit; slower, larger memories cost less per bit.'
+                    },
+                    {
+                        question: 'Which of the following is NOT true according to the lecture?',
+                        options: ['Faster access time means greater cost per bit', 'Greater capacity means smaller cost per bit', 'Greater capacity means slower access time', 'Greater capacity means faster access time'],
+                        correct: 3,
+                        explanation: 'Greater capacity actually means slower access time, not faster — capacity and speed trade off.'
+                    },
+                    {
+                        question: 'The way out of the trade-off between capacity, access time, and cost is:',
+                        options: ['Employing a memory hierarchy', 'Using only the fastest memory', 'Using a single large memory', 'Removing the cache'],
+                        correct: 0,
+                        explanation: 'A memory hierarchy combines fast/expensive and slow/cheap memories to satisfy all needs.'
+                    },
+                    {
+                        question: 'Going down the memory hierarchy:',
+                        options: ['Cost per bit increases and capacity decreases', 'Cost per bit decreases, capacity and access time increase, and the processor accesses it less frequently', 'Access time and capacity both decrease', 'Everything increases'],
+                        correct: 1,
+                        explanation: 'Down the hierarchy: cost per bit and speed decrease, while capacity increases and access frequency drops.'
+                    },
+                    {
+                        question: 'A "hit" means:',
+                        options: ['The word is not found in the faster memory', 'The memory is full', 'The accessed word is found in the faster memory', 'The processor halts'],
+                        correct: 2,
+                        explanation: 'A hit occurs when the accessed word is found in the faster (cache) memory.'
+                    },
+                    {
+                        question: 'A "miss" means:',
+                        options: ['The word is found in the faster memory', 'A write operation finished', 'A hardware failure occurred', 'The accessed word is not found in the faster memory'],
+                        correct: 3,
+                        explanation: 'A miss occurs when the accessed word is not found in the faster memory and must come from a lower level.'
+                    },
+                    {
+                        question: 'The hit ratio describes:',
+                        options: ['How many times the faster memory is accessed successfully relative to all accesses', 'The memory capacity', 'The clock rate', 'The bus width'],
+                        correct: 0,
+                        explanation: 'The hit ratio is the fraction of accesses that find the word in the faster memory.'
+                    },
+                    {
+                        question: 'Which memory is described as "Processor Memory"?',
+                        options: ['Secondary memory', 'Cache memory', 'Main memory', 'ROM only'],
+                        correct: 1,
+                        explanation: 'Cache memory is the fastest level and is described as processor memory.'
+                    },
+                    {
+                        question: 'According to the lecture, disk cache is generally:',
+                        options: ['A purely hardware technique', 'Part of the CPU', 'A purely software technique', 'The same as L1 cache'],
+                        correct: 2,
+                        explanation: 'Disk cache is generally implemented as a purely software technique.'
+                    },
+                    {
+                        question: 'Which level of the hierarchy does the processor access least frequently?',
+                        options: ['Registers', 'Cache', 'Main memory', 'Secondary memory'],
+                        correct: 3,
+                        explanation: 'Secondary memory is the slowest, largest level and is accessed least frequently.'
+                    },
+                    {
+                        question: 'Why can’t a single memory technology satisfy all needs?',
+                        options: ['Because of the trade-off among capacity, access time, and cost', 'Because memory has no capacity', 'Because all memories are equally fast', 'Because the CPU cannot access memory'],
+                        correct: 0,
+                        explanation: 'No single technology offers high capacity, fast access, and low cost at once — hence the hierarchy.'
+                    }
+                ]
             }
+
 
         ]
     },
