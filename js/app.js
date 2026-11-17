@@ -493,6 +493,72 @@ const COURSES = [
                         explanation: 'Going down the hierarchy, speed decreases and capacity increases: Register, Cache, RAM, SSD, HDD, Cloud.'
                     }
                 ]
+            },
+            {
+                id: 'sp-quiz2',
+                title: 'Lecture 1 · Computer Architecture, Organization, and Design MCQs for midterm',
+                questions: [
+                    {
+                        question: 'Which statement best summarizes Computer Architecture?',
+                        options: ['What the computer does (what it provides to the programmer)', 'How the computer is internally arranged', 'How we engineer the actual implementation', 'How much the computer costs'],
+                        correct: 0,
+                        explanation: 'Computer Architecture is the abstract view of what the computer provides to the programmer: the instruction set, registers, and data types.'
+                    },
+                    {
+                        question: 'Which of the following belongs to Computer Organization?',
+                        options: ['Available instructions', 'Datapath and control unit', 'Addressing modes', 'Instruction formats'],
+                        correct: 1,
+                        explanation: 'Datapath and control unit describe how the computer is internally arranged and operates — that is Organization. Instructions, addressing modes, and instruction formats are architecture (ISA).'
+                    },
+                    {
+                        question: 'The fact that MIPS provides an add instruction and specifies what it does is an example of:',
+                        options: ['Organization', 'Design', 'Architecture', 'Implementation constraint'],
+                        correct: 2,
+                        explanation: 'Defining the add instruction and its behavior is part of the instruction set — the programmer-visible interface, which is Architecture.'
+                    },
+                    {
+                        question: 'Which of the following is NOT an architectural characteristic of MIPS?',
+                        options: ['32-bit instructions', '32 general-purpose registers', 'Load/store architecture', 'Number of pipeline stages in a specific implementation'],
+                        correct: 3,
+                        explanation: 'Pipeline stages depend on the specific implementation (organization/design), not the architecture. Instruction size, register count, and load/store style are ISA-level architectural characteristics.'
+                    },
+                    {
+                        question: 'The question "How does the computer internally implement what the architecture specifies?" is answered by:',
+                        options: ['Architecture', 'Organization', 'Design', 'Programming'],
+                        correct: 1,
+                        explanation: 'Organization describes how the hardware internally implements the architecture — the datapath, control unit, ALU, cache, and pipeline.'
+                    },
+                    {
+                        question: 'Computer Design is:',
+                        options: ['The set of instructions visible to the programmer', 'The engineering process of deciding how to build the system under specific requirements and constraints', 'Only the arrangement of buses', 'Only writing assembly programs'],
+                        correct: 1,
+                        explanation: 'Computer Design is the engineering process of deciding how to build the system given requirements and constraints such as power, cost, and performance.'
+                    },
+                    {
+                        question: 'Which of the following is a design decision?',
+                        options: ['Choosing the number of cores and clock frequency', 'Defining the addressing modes in the ISA', 'Defining the instruction formats', 'Defining the data types visible to the programmer'],
+                        correct: 0,
+                        explanation: 'Cores and clock frequency are implementation choices made during design under constraints. ISA addressing modes, instruction formats, and data types are architecture.'
+                    },
+                    {
+                        question: 'A designer needs a processor with lower power consumption but high performance, so they choose 4 cores, a 3-level cache, a 5-stage pipeline, and a 2 GHz clock. These are all:',
+                        options: ['Architectural characteristics', 'Design decisions', 'ISA features', 'Programmer-visible registers'],
+                        correct: 1,
+                        explanation: 'Choosing cores, cache levels, pipeline depth, and clock frequency to balance power and performance are engineering design decisions, not architecture.'
+                    },
+                    {
+                        question: 'Which of the following are examples of design constraints mentioned in the lecture?',
+                        options: ['Power consumption, area, cost', 'Registers visible to the programmer', 'Instruction formats', 'Addressing modes'],
+                        correct: 0,
+                        explanation: 'Power, area, and cost are physical/engineering constraints that drive design decisions. Registers, instruction formats, and addressing modes belong to the architecture.'
+                    },
+                    {
+                        question: 'According to the diagram in the lecture, the relationship between the three concepts is:',
+                        options: ['Design comes first, and Architecture and Organization are derived from it', 'Architecture (what it does) and Organization (how it works) come together at Design (how we build it under constraints)', 'Organization is at the top and splits into Architecture and Design', 'All three mean the same thing'],
+                        correct: 1,
+                        explanation: 'Architecture defines what the computer provides, Organization how it works internally, and Design how we build it under constraints — architecture and organization combine at the design level.'
+                    }
+                ]
             }
         ]
     },
